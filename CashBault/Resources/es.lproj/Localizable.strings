@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  CashBault
+
+  Created by manueltirado on 29/4/24.
+  
+*/
+
+"tab_home_title" = "Inicio";
+"tab_finance_title" = "Finanzas";
+"tab_explore_title" = "Explorar";
+"tab_cards_title" = "Tarjetas";
