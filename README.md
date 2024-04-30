@@ -1,2 +1,3 @@
 #  CashBault
 
+- SwiftGen for strings

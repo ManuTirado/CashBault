@@ -1,11 +1,3 @@
-/* 
-  Localizable.strings
-  CashBault
-
-  Created by manueltirado on 29/4/24.
-  
-*/
-
 "tab_home_title" = "Home";
 "tab_finance_title" = "Finances";
 "tab_explore_title" = "Explore";
