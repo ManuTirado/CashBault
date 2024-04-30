@@ -16,10 +16,7 @@ internal enum L10n {
   internal static let tabExploreTitle = L10n.tr("Localizable", "tab_explore_title", fallback: "Explore")
   /// Finances
   internal static let tabFinanceTitle = L10n.tr("Localizable", "tab_finance_title", fallback: "Finances")
-  /// Localizable.strings
-  ///   CashBault
-  /// 
-  ///   Created by manueltirado on 29/4/24.
+  /// Home
   internal static let tabHomeTitle = L10n.tr("Localizable", "tab_home_title", fallback: "Home")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

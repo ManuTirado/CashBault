@@ -8,11 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject var appState = AppState()
+    
     var body: some View {
-        AppTabView()
+        ZStack {
+            if appState.user != nil {
+                AppTabView()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .transition(.move(edge: .trailing))
+            } else {
+                LoginView()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .transition(.move(edge: .leading))
+            }
+        }
+        .animation(.spring, value: appState.user != nil)
+        .environmentObject(appState)
     }
 }
 
 #Preview {
     ContentView()
+        .environmentObject(AppState())
 }

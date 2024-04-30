@@ -56,7 +56,7 @@ struct AppTabView: View {
     }
     
     var body: some View {
-        ZStack(alignment: .bottom, content: {
+        ZStack(alignment: .bottom) {
             TabView(selection: $selectedTab) {
                 NavigationStack {
                     HomeView()
@@ -74,6 +74,9 @@ struct AppTabView: View {
                     CardsView()
                 }.tag(Tabs.cards.id)
             }
+            .tabViewStyle(.page(indexDisplayMode: .never))
+            .transition(.slide)
+            .animation(.spring, value: selectedTab)
             ZStack {
                 HStack(spacing: 0) {
                     ForEach(Tabs.allCases, id: \.id) { tab in
@@ -89,7 +92,7 @@ struct AppTabView: View {
             .frame(maxWidth: .infinity)
             .frame(height: 50)
             .background(Color.indigo)
-        })
+        }
     }
 }
 
@@ -130,4 +133,5 @@ extension AppTabView {
 
 #Preview {
     AppTabView()
+        .environmentObject(AppState())
 }

@@ -1,32 +1,31 @@
 //
-//  FinanceView.swift
+//  LoginView.swift
 //  CashBault
 //
-//  Created by manueltirado on 29/4/24.
+//  Created by manueltirado on 30/4/24.
 //
 
 import SwiftUI
 
-struct FinanceView: View {
+struct LoginView: View {
     
     @EnvironmentObject var appState: AppState
     
     var body: some View {
         VStack {
-            Text("Finance View")
+            Text("Login View")
             Button {
-                appState.user = nil
+                appState.user = User.Mock
             } label: {
-                Text("Volver al Login")
+                Text("LOGIN")
                     .padding()
+                    .background(Color.red)
                     .clipShape(Capsule())
-                    .background(Color.yellow)
             }
         }
     }
 }
 
 #Preview {
-    FinanceView()
-        .environmentObject(AppState())
+    LoginView()
 }

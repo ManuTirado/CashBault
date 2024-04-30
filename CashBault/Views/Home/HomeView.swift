@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct HomeView: View {
+
     var body: some View {
-        Text("Home View")
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.red)
+        VStack {
+            Text("Home View")
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.red)
     }
 }
 
 #Preview {
     HomeView()
+        .environmentObject(AppState())
 }
