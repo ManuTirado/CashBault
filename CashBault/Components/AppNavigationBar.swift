@@ -26,7 +26,7 @@ struct AppNavigationBarModifier<LeftView, CentralView, RightView>: ViewModifier 
             }
             .frame(maxWidth: .infinity)
             .frame(height: 50)
-            .background(Color.red)
+            .background(Asset.Colors.background.swiftUIColor)
             Divider()
             content
                 .navigationBarHidden(true)

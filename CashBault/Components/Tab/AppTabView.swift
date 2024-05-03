@@ -82,7 +82,7 @@ struct AppTabView: View {
             }
             .frame(maxWidth: .infinity)
             .frame(height: 50)
-            .background(Color.indigo)
+            .background(Asset.Colors.background.swiftUIColor)
         }
         .environmentObject(accountsModel)
     }
@@ -110,12 +110,12 @@ extension AppTabView {
                     .offset(y: isSelected ? -15 : 0)
             }
             .frame(height: 50)
-            .foregroundStyle(isSelected ? Color.green : Color.black)
+            .foregroundStyle(isSelected ? Asset.Colors.lightBackground.swiftUIColor : Asset.Colors.secondaryColor.swiftUIColor)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .padding(.vertical, 16)
             .background(
                 Capsule()
-                    .fill(.indigo)
+                    .fill(Asset.Colors.background.swiftUIColor)
                     .offset(y: isSelected ? 0 : 16)
             )
             .animation(.bouncy, value: isSelected)

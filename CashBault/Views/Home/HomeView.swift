@@ -22,6 +22,7 @@ struct HomeView: View {
             .customNavigationBar(
                 customCenterContent: {
                     Text(L10n.tabHomeTitle)
+                        .modifier(TextModifier(size: 16, weight: .bold, color: .white))
                 }
             )
         }
