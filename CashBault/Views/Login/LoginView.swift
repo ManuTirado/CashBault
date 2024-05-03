@@ -19,7 +19,7 @@ struct LoginView: View {
             } label: {
                 Text("LOGIN")
                     .padding()
-                    .background(Color.red)
+                    .background(Color.yellow)
                     .clipShape(Capsule())
             }
         }

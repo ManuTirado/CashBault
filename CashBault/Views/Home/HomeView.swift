@@ -8,17 +8,40 @@
 import SwiftUI
 
 struct HomeView: View {
-
+    
+    @EnvironmentObject var accountsModel: AccountsModel
+    
     var body: some View {
-        VStack {
-            Text("Home View")
+        NavigationStack {
+            VStack(spacing: 0) {
+                header
+                movements
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.red)
+            .customNavigationBar(
+                customCenterContent: {
+                    Text(L10n.tabHomeTitle)
+                }
+            )
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.red)
+    }
+    
+    @ViewBuilder
+    var header: some View {
+        Text("Header")
+    }
+    
+    @ViewBuilder
+    var movements: some View {
+        Spacer()
     }
 }
 
 #Preview {
-    HomeView()
-        .environmentObject(AppState())
+    NavigationStack {
+        HomeView()
+    }
+    .environmentObject(AppState())
+    .environmentObject(AccountsModel())
 }

@@ -10,7 +10,6 @@ import Foundation
 class AppState: ObservableObject {
     
     @Published var user: User?
-    
 }
 
 struct User {

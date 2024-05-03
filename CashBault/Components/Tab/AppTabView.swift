@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AppTabView: View {
     
+    @StateObject var accountsModel = AccountsModel()
     @State private var selectedTab: Int = Tabs.homepage.id
     
     enum Tabs: Identifiable, CaseIterable {
@@ -58,25 +59,15 @@ struct AppTabView: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             TabView(selection: $selectedTab) {
-                NavigationStack {
-                    HomeView()
-                }.tag(Tabs.homepage.id)
-                
-                NavigationStack {
-                    FinanceView()
-                }.tag(Tabs.finance.id)
-                
-                NavigationStack {
-                    ExploreView()
-                }.tag(Tabs.explore.id)
-                
-                NavigationStack {
-                    CardsView()
-                }.tag(Tabs.cards.id)
+                HomeView()
+                    .tag(Tabs.homepage.id)
+                FinanceView()
+                    .tag(Tabs.finance.id)
+                ExploreView()
+                    .tag(Tabs.explore.id)
+                CardsView()
+                    .tag(Tabs.cards.id)
             }
-            .tabViewStyle(.page(indexDisplayMode: .never))
-            .transition(.slide)
-            .animation(.spring, value: selectedTab)
             ZStack {
                 HStack(spacing: 0) {
                     ForEach(Tabs.allCases, id: \.id) { tab in
@@ -93,6 +84,7 @@ struct AppTabView: View {
             .frame(height: 50)
             .background(Color.indigo)
         }
+        .environmentObject(accountsModel)
     }
 }
 

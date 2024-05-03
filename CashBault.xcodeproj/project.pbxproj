@@ -10,11 +10,14 @@
 		13D1454F7426199256818425 /* libPods-CashBault.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBDC47B1C3F898EF9988BA7C /* libPods-CashBault.a */; };
 		FA0DE9C32BE00AEA00E49343 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA0DE9C12BE00AEA00E49343 /* Localizable.strings */; };
 		FA0DE9C72BE00F4900E49343 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0DE9C52BE00F4900E49343 /* Strings+Generated.swift */; };
+		FA1087B72BE5571C00C94A3F /* AppNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1087B62BE5571C00C94A3F /* AppNavigationBar.swift */; };
+		FA1087B92BE560EB00C94A3F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA1087B82BE560EB00C94A3F /* Colors.xcassets */; };
 		FA3C18282BE162F50080F474 /* AccountsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3C18272BE162F50080F474 /* AccountsModel.swift */; };
 		FA3C182B2BE168800080F474 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3C182A2BE1687F0080F474 /* LoginView.swift */; };
+		FA3C182D2BE178850080F474 /* TextModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3C182C2BE178850080F474 /* TextModifiers.swift */; };
 		FAB2487F2BDFF0D700D21514 /* CashBaultApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB2487E2BDFF0D700D21514 /* CashBaultApp.swift */; };
 		FAB248812BDFF0D700D21514 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB248802BDFF0D700D21514 /* ContentView.swift */; };
-		FAB248832BDFF0DD00D21514 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB248822BDFF0DD00D21514 /* Assets.xcassets */; };
+		FAB248832BDFF0DD00D21514 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB248822BDFF0DD00D21514 /* Images.xcassets */; };
 		FAB248B02BDFF59E00D21514 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB248AF2BDFF59E00D21514 /* AppState.swift */; };
 		FAB248B52BDFF69000D21514 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB248B42BDFF69000D21514 /* AppTabView.swift */; };
 		FAB248B82BDFF6C700D21514 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB248B72BDFF6C700D21514 /* Constants.swift */; };
@@ -32,12 +35,15 @@
 		FA0DE9C22BE00AEA00E49343 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA0DE9C42BE00B0D00E49343 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA0DE9C52BE00F4900E49343 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
+		FA1087B62BE5571C00C94A3F /* AppNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationBar.swift; sourceTree = "<group>"; };
+		FA1087B82BE560EB00C94A3F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		FA3C18272BE162F50080F474 /* AccountsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsModel.swift; sourceTree = "<group>"; };
 		FA3C182A2BE1687F0080F474 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		FA3C182C2BE178850080F474 /* TextModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifiers.swift; sourceTree = "<group>"; };
 		FAB2487B2BDFF0D700D21514 /* CashBault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CashBault.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB2487E2BDFF0D700D21514 /* CashBaultApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashBaultApp.swift; sourceTree = "<group>"; };
 		FAB248802BDFF0D700D21514 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		FAB248822BDFF0DD00D21514 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FAB248822BDFF0DD00D21514 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FAB248A92BDFF42E00D21514 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FAB248AF2BDFF59E00D21514 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		FAB248B42BDFF69000D21514 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
@@ -130,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				FAB248B32BDFF67A00D21514 /* Tab */,
+				FA1087B62BE5571C00C94A3F /* AppNavigationBar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -138,7 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				FA0DE9C62BE00F4900E49343 /* Generated */,
-				FAB248822BDFF0DD00D21514 /* Assets.xcassets */,
+				FA1087B82BE560EB00C94A3F /* Colors.xcassets */,
+				FAB248822BDFF0DD00D21514 /* Images.xcassets */,
 				FA0DE9C12BE00AEA00E49343 /* Localizable.strings */,
 			);
 			path = Resources;
@@ -147,6 +155,7 @@
 		FAB248AC2BDFF49400D21514 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
+				FA3C182C2BE178850080F474 /* TextModifiers.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -291,7 +300,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAB248832BDFF0DD00D21514 /* Assets.xcassets in Resources */,
+				FA1087B92BE560EB00C94A3F /* Colors.xcassets in Resources */,
+				FAB248832BDFF0DD00D21514 /* Images.xcassets in Resources */,
 				FA0DE9C32BE00AEA00E49343 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,12 +358,14 @@
 				FA0DE9C72BE00F4900E49343 /* Strings+Generated.swift in Sources */,
 				FAB248B82BDFF6C700D21514 /* Constants.swift in Sources */,
 				FAB248B02BDFF59E00D21514 /* AppState.swift in Sources */,
+				FA1087B72BE5571C00C94A3F /* AppNavigationBar.swift in Sources */,
 				FAB248812BDFF0D700D21514 /* ContentView.swift in Sources */,
 				FAB248C32BDFF81F00D21514 /* CardsView.swift in Sources */,
 				FAB248BF2BDFF80700D21514 /* FinanceView.swift in Sources */,
 				FA3C182B2BE168800080F474 /* LoginView.swift in Sources */,
 				FAB248BD2BDFF7FE00D21514 /* HomeView.swift in Sources */,
 				FAB248B52BDFF69000D21514 /* AppTabView.swift in Sources */,
+				FA3C182D2BE178850080F474 /* TextModifiers.swift in Sources */,
 				FAB248C12BDFF81400D21514 /* ExploreView.swift in Sources */,
 				FA3C18282BE162F50080F474 /* AccountsModel.swift in Sources */,
 				FAB2487F2BDFF0D700D21514 /* CashBaultApp.swift in Sources */,

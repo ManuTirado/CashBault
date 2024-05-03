@@ -8,6 +8,7 @@
 import Foundation
 
 class AccountsModel: ObservableObject {
+    
     @Published var accounts: Account?
     @Published var selectedAccount: Account?
 }
