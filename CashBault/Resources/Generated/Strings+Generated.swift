@@ -10,6 +10,18 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// Normal account
+  internal static let accountTypeNormalTitle = L10n.tr("Localizable", "account_type_normal_title", fallback: "Normal account")
+  /// Saving account
+  internal static let accountTypeSavingTitle = L10n.tr("Localizable", "account_type_saving_title", fallback: "Saving account")
+  /// Add money
+  internal static let homeActionAddMoney = L10n.tr("Localizable", "home_action_add_money", fallback: "Add money")
+  /// Insights
+  internal static let homeActionInsights = L10n.tr("Localizable", "home_action_insights", fallback: "Insights")
+  /// Scheduled
+  internal static let homeActionScheduled = L10n.tr("Localizable", "home_action_scheduled", fallback: "Scheduled")
+  /// Send money
+  internal static let homeActionSendMoney = L10n.tr("Localizable", "home_action_send_money", fallback: "Send money")
   /// Cards
   internal static let tabCardsTitle = L10n.tr("Localizable", "tab_cards_title", fallback: "Cards")
   /// Explore

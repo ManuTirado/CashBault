@@ -85,6 +85,11 @@ struct AppTabView: View {
             .background(Asset.Colors.background.swiftUIColor)
         }
         .environmentObject(accountsModel)
+        .onAppear {
+            Task {
+                await getUserAccounts()
+            }
+        }
     }
 }
 
@@ -110,7 +115,7 @@ extension AppTabView {
                     .offset(y: isSelected ? -15 : 0)
             }
             .frame(height: 50)
-            .foregroundStyle(isSelected ? Asset.Colors.lightBackground.swiftUIColor : Asset.Colors.secondaryColor.swiftUIColor)
+            .foregroundStyle(isSelected ? Asset.Colors.primaryColor.swiftUIColor : Asset.Colors.secondaryColor.swiftUIColor)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .padding(.vertical, 16)
             .background(
@@ -120,6 +125,23 @@ extension AppTabView {
             )
             .animation(.bouncy, value: isSelected)
         }
+    }
+}
+
+extension AppTabView {
+    
+    private func getUserAccounts() async {
+        do {
+            accountsModel.errorGettingAccounts = false
+            accountsModel.loadingAccounts = true
+            try await Task.sleep(nanoseconds: 500_000_000)
+            accountsModel.accounts = [Account.Mock1, Account.Mock2]
+            accountsModel.selectedAccount = accountsModel.accounts?.first
+        } catch {
+            accountsModel.errorGettingAccounts = true
+            print(error)
+        }
+        accountsModel.loadingAccounts = false
     }
 }
 

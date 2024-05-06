@@ -2,3 +2,11 @@
 "tab_finance_title" = "Finances";
 "tab_explore_title" = "Explore";
 "tab_cards_title" = "Cards";
+
+"home_action_add_money" = "Add money";
+"home_action_send_money" = "Send money";
+"home_action_scheduled" = "Scheduled";
+"home_action_insights" = "Insights";
+
+"account_type_normal_title" = "Normal account";
+"account_type_saving_title" = "Saving account";
