@@ -69,6 +69,13 @@ struct HomeView: View {
     @State private var selectedAccount: Account?
     @State private var selectedIndex: Int?
     
+    var groupedMovements: [(Date, [AccountMovement])] {
+        let groupedDictionary = Dictionary(grouping: accountsModel.selectedAccount?.movements ?? []) { object in
+            Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: object.date) ?? Date()
+        }
+        return groupedDictionary.sorted {  $0.key.compare($1.key) == .orderedDescending }
+    }
+    
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
@@ -145,13 +152,32 @@ struct HomeView: View {
     @ViewBuilder
     var movementsList: some View {
         VStack(spacing: 0) {
-            if let selectedAccount = accountsModel.selectedAccount {
+            if let _ = accountsModel.selectedAccount {
                 ScrollView {
-                    LazyVStack(spacing: 8) {
-                        ForEach(selectedAccount.movements, id: \.id) { movement in
-                            AccountMovementCellView(movement: movement)
+                    LazyVStack(alignment: .leading, spacing: 0) {
+                        ForEach(groupedMovements, id: \.0) { day, movements in
+                            VStack(alignment: .leading, spacing: 0) {
+                                Text(Util.getFormattedDate(date: day, formatt: .weekName_day_monthName).uppercased())
+                                    .modifier(TextModifier(size: 16, weight: .bold, color: Asset.Colors.primaryColor.swiftUIColor))
+                                    .padding(.vertical, 8)
+                                LazyVStack(alignment: .leading, spacing: 0) {
+                                    ForEach(movements, id: \.id) { movement in
+                                        AccountMovementCellView(movement: movement)
+                                        Rectangle()
+                                            .fill(Asset.Colors.secondaryColor.swiftUIColor)
+                                            .frame(height: 1)
+                                    }
+                                }
+                                .clipShape(RoundedRectangle(cornerRadius: 15))
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 15)
+                                        .stroke(Asset.Colors.secondaryColor.swiftUIColor, lineWidth: 1)
+                                }
+                            }
                         }
                     }
+                    .padding(.top, 24)
+                    .padding(.horizontal, 16)
                 }
             } else {
                 Text("NO HAY MOVIMIENTOS")

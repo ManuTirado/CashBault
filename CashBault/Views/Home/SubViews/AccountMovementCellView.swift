@@ -58,8 +58,8 @@ struct AccountMovementCellView: View {
                 .overlay {
                     if movement.state == .cancelled {
                         Rectangle()
+                            .fill(isIncome ? Asset.Colors.background.swiftUIColor : Asset.Colors.primaryColor.swiftUIColor)
                             .frame(height: 2)
-                            .foregroundStyle(isIncome ? Asset.Colors.background.swiftUIColor : Asset.Colors.primaryColor.swiftUIColor)
                             .padding(.horizontal, 2)
                     }
                 }
