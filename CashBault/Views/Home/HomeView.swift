@@ -149,9 +149,7 @@ struct HomeView: View {
                 ScrollView {
                     LazyVStack(spacing: 8) {
                         ForEach(selectedAccount.movements, id: \.id) { movement in
-                            Text("\(movement.id)")
-                                .frame(height: 30)
-                                .background(Color.red)
+                            AccountMovementCellView(movement: movement)
                         }
                     }
                 }

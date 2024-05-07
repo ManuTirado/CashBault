@@ -32,6 +32,7 @@ internal enum Asset {
     internal static let lightBackground = ColorAsset(name: "LightBackground")
     internal static let primaryColor = ColorAsset(name: "PrimaryColor")
     internal static let secondaryColor = ColorAsset(name: "SecondaryColor")
+    internal static let succesGreen = ColorAsset(name: "SuccesGreen")
   }
   internal enum Images {
     internal static let test = ImageAsset(name: "test")

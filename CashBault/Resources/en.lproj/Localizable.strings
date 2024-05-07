@@ -10,3 +10,9 @@
 
 "account_type_normal_title" = "Normal account";
 "account_type_saving_title" = "Saving account";
+
+"account_movement_sender_to" = "To %@";
+"account_movement_sender_from" = "From %@";
+
+"pending" = "Pending";
+"cancelled" = "Cancelled";

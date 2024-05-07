@@ -30,6 +30,7 @@
 		FAB248BF2BDFF80700D21514 /* FinanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB248BE2BDFF80700D21514 /* FinanceView.swift */; };
 		FAB248C12BDFF81400D21514 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB248C02BDFF81400D21514 /* ExploreView.swift */; };
 		FAB248C32BDFF81F00D21514 /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB248C22BDFF81F00D21514 /* CardsView.swift */; };
+		FACA0FFE2BEA9FCD00DD6D5F /* AccountMovementCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA0FFD2BEA9FCD00DD6D5F /* AccountMovementCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		FAB248BE2BDFF80700D21514 /* FinanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceView.swift; sourceTree = "<group>"; };
 		FAB248C02BDFF81400D21514 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		FAB248C22BDFF81F00D21514 /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
+		FACA0FFD2BEA9FCD00DD6D5F /* AccountMovementCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountMovementCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				FA91A50C2BE946E900CD5D33 /* AccountCellView.swift */,
+				FACA0FFD2BEA9FCD00DD6D5F /* AccountMovementCellView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				FA0DE9C72BE00F4900E49343 /* Strings+Generated.swift in Sources */,
 				FAB248B82BDFF6C700D21514 /* Constants.swift in Sources */,
 				FAB248B02BDFF59E00D21514 /* AppState.swift in Sources */,
+				FACA0FFE2BEA9FCD00DD6D5F /* AccountMovementCellView.swift in Sources */,
 				FA1087B72BE5571C00C94A3F /* AppNavigationBar.swift in Sources */,
 				FAB248812BDFF0D700D21514 /* ContentView.swift in Sources */,
 				FAB248C32BDFF81F00D21514 /* CardsView.swift in Sources */,
