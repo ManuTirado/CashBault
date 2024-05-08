@@ -10,6 +10,7 @@ import SwiftUI
 struct AccountCellView: View {
     
     let account: Account
+    @Binding var isLoading: Bool
     
     var body: some View {
         HStack(alignment: .top, spacing: 0) {
@@ -35,12 +36,13 @@ struct AccountCellView: View {
             }
         }
         .padding()
+        .modifier(LoadingShimmeringModifierV2(isLoading: $isLoading))
         .background(Asset.Colors.lightBackground.swiftUIColor)
         .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }
 
 #Preview {
-    AccountCellView(account: Account.Mock1)
+    AccountCellView(account: Account.Mock1, isLoading: .constant(true))
         .padding()
 }

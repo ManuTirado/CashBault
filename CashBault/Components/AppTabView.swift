@@ -134,7 +134,7 @@ extension AppTabView {
         do {
             accountsModel.errorGettingAccounts = false
             accountsModel.loadingAccounts = true
-            try await Task.sleep(nanoseconds: 500_000_000)
+            try await Task.sleep(nanoseconds: 5_000_000_000)
             accountsModel.accounts = [Account.Mock1, Account.Mock2]
             accountsModel.selectedAccount = accountsModel.accounts?.first
         } catch {

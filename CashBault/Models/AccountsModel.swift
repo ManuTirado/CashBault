@@ -11,7 +11,7 @@ class AccountsModel: ObservableObject {
     
     @Published var accounts: [Account]?
     @Published var selectedAccount: Account?
-    @Published var loadingAccounts: Bool = false
+    @Published var loadingAccounts: Bool = true
     @Published var errorGettingAccounts: Bool = false
 }
 
@@ -66,6 +66,9 @@ struct AccountMovement {
 }
 
 extension Account {
+    static var Empty: Account {
+        .init(id: 0, iban: "", type: .normal, name: "", currency: "", currencySymbol: "", balance: 0, movements: [])
+    }
     static var Mock1: Account {
         .init(id: 1, iban: "NL24ABNA6971032004", type: .normal, name: "Main Account", currency: "EUR", currencySymbol: "€", balance: 1000, movements: [AccountMovement.Mock1,
                                                                                                                                   AccountMovement.Mock2,
@@ -84,6 +87,16 @@ extension Account {
 }
 
 extension AccountMovement {
+    static var EmptyArray: [AccountMovement] {
+        return [
+            .init(id: 1, state: .done, date: Calendar.current.date(byAdding: .day, value: -4, to: Date()) ?? Date(), concept: "Aaaaaaa aaaaaaaa", currency: "", currencySymbol: "", quantity: -1, sender: "Aaaaaa Aaaaaa"),
+            .init(id: 2, state: .pending, date: Calendar.current.date(byAdding: .day, value: -4, to: Date()) ?? Date(), concept: "Aaaa aaaaaaaa", currency: "", currencySymbol: "", quantity: -1, sender: "Aaaaaa Aaaaaaa"),
+            .init(id: 3, state: .pending, date: Calendar.current.date(byAdding: .day, value: -3, to: Date()) ?? Date(), concept: "Aa aaaaaaaa", currency: "", currencySymbol: "", quantity: -1, sender: "Aaa Aaaa"),
+            .init(id: 4, state: .done, date: Date(), concept: "Aaaaaa", currency: "", currencySymbol: "", quantity: -1, sender: "Aaaaaaa Aaaaaa"),
+            .init(id: 5, state: .pending, date: Date(), concept: "Aaaa", currency: "", currencySymbol: "", quantity: -1, sender: "Aaaaaa Aaaaaaaaa"),
+        ]
+    }
+    
     static var Mock1: AccountMovement {
         .init(id: 1, state: .pending, date: Calendar.current.date(byAdding: .day, value: -3, to: Date()) ?? Date(), concept: "Pending Movement", currency: "EUR", currencySymbol: "€", quantity: 100, sender: "Bijoy Anticlea Hanne")
     }

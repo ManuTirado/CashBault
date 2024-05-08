@@ -68,21 +68,23 @@ struct HomeView: View {
     @State private var accounts: [Account] = [Account.Mock1, Account.Mock2]
     @State private var selectedAccount: Account?
     @State private var selectedIndex: Int?
-    
-    var groupedMovements: [(Date, [AccountMovement])] {
-        let groupedDictionary = Dictionary(grouping: accountsModel.selectedAccount?.movements ?? []) { object in
+    private var groupedMovements: [(Date, [AccountMovement])] {
+        let movements = isLoading ? AccountMovement.EmptyArray : accountsModel.selectedAccount?.movements ?? []
+        let groupedDictionary = Dictionary(grouping: movements) { object in
             Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: object.date) ?? Date()
         }
         return groupedDictionary.sorted {  $0.key.compare($1.key) == .orderedDescending }
     }
+    private var isLoading: Bool {
+        accountsModel.loadingAccounts
+    }
     
     var body: some View {
         NavigationStack {
-            VStack(spacing: 0) {
+            VStack(spacing: 16) {
                 accountSelector
                 accountActions
                 movementsList
-                Spacer(minLength: 0)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Asset.Colors.darkBackground.swiftUIColor)
@@ -101,15 +103,13 @@ struct HomeView: View {
             if accountsModel.errorGettingAccounts {
                 Text("ERROR")
                     .background(Color.red)
-            } else if accountsModel.loadingAccounts {
-                LoaderView()
             } else {
                 GeometryReader { reader in
                     ScrollViewReader { value in
                         ScrollView(.horizontal) {
                             LazyHStack(spacing: 10) {
-                                ForEach(accountsModel.accounts ?? [], id: \.self) { account in
-                                    AccountCellView(account: account)
+                                ForEach(accountsModel.accounts ?? [Account.Empty], id: \.self) { account in
+                                    AccountCellView(account: account, isLoading: $accountsModel.loadingAccounts)
                                         .frame(width: reader.size.width*0.9)
                                 }
                             }
@@ -129,22 +129,17 @@ struct HomeView: View {
     @ViewBuilder
     var accountActions: some View {
         VStack(spacing: 0) {
-            if accountsModel.accounts != nil {
-                HStack(spacing: 0) {
-                    ForEach(AccountQuickActions.allCases, id: \.self) { item in
-                        CircleIconButtonView(icon: item.icon,
-                                             text: item.title,
-                                             textColor: item.textColor,
-                                             foregroundColor: item.iconForeground,
-                                             backgroundColor: item.iconBackground) {
-                            print("ITEM: \(item.title)")
-                        }
-                                             .frame(maxWidth: .infinity)
+            HStack(spacing: 0) {
+                ForEach(AccountQuickActions.allCases, id: \.self) { item in
+                    CircleIconButtonView(icon: item.icon,
+                                         text: item.title,
+                                         textColor: item.textColor,
+                                         foregroundColor: item.iconForeground,
+                                         backgroundColor: item.iconBackground) {
+                        print("ITEM: \(item.title)")
                     }
+                                         .frame(maxWidth: .infinity)
                 }
-            } else {
-                Text("NO HAY CUENTAS")
-                    .foregroundStyle(.white)
             }
         }
     }
@@ -152,7 +147,10 @@ struct HomeView: View {
     @ViewBuilder
     var movementsList: some View {
         VStack(spacing: 0) {
-            if let _ = accountsModel.selectedAccount {
+            if accountsModel.selectedAccount?.movements.isEmpty ?? false && !isLoading {
+                Text(L10n.noMovements)
+                    .modifier(TextModifier(size: 18, weight: .bold, color: Asset.Colors.primaryColor.swiftUIColor))
+            } else {
                 ScrollView {
                     LazyVStack(alignment: .leading, spacing: 0) {
                         ForEach(groupedMovements, id: \.0) { day, movements in
@@ -163,6 +161,7 @@ struct HomeView: View {
                                 LazyVStack(alignment: .leading, spacing: 0) {
                                     ForEach(movements, id: \.id) { movement in
                                         AccountMovementCellView(movement: movement)
+                                            .modifier(TextModifier(size: 1, weight: .black))
                                         Rectangle()
                                             .fill(Asset.Colors.secondaryColor.swiftUIColor)
                                             .frame(height: 1)
@@ -176,12 +175,11 @@ struct HomeView: View {
                             }
                         }
                     }
-                    .padding(.top, 24)
+                    .padding(.bottom, 24)
                     .padding(.horizontal, 16)
                 }
-            } else {
-                Text("NO HAY MOVIMIENTOS")
-                    .foregroundStyle(.white)
+                .scrollDisabled(isLoading ? true : false)
+                .modifier(LoadingShimmeringModifier(isLoading: $accountsModel.loadingAccounts))
             }
         }
     }

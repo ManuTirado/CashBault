@@ -16,3 +16,4 @@
 
 "pending" = "Pending";
 "cancelled" = "Cancelled";
+"no_movements" = "You have no movements";

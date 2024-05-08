@@ -16,6 +16,7 @@
 		FA3C18282BE162F50080F474 /* AccountsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3C18272BE162F50080F474 /* AccountsModel.swift */; };
 		FA3C182B2BE168800080F474 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3C182A2BE1687F0080F474 /* LoginView.swift */; };
 		FA3C182D2BE178850080F474 /* TextModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3C182C2BE178850080F474 /* TextModifiers.swift */; };
+		FA739C762BEBEEF300ACF6D7 /* LoadingShimmeringModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA739C752BEBEEF300ACF6D7 /* LoadingShimmeringModifier.swift */; };
 		FA91A50D2BE946E900CD5D33 /* AccountCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA91A50C2BE946E900CD5D33 /* AccountCellView.swift */; };
 		FA91A50F2BE94A6800CD5D33 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA91A50E2BE94A6800CD5D33 /* LoaderView.swift */; };
 		FA91A5112BE94B0000CD5D33 /* CircleIconButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA91A5102BE94B0000CD5D33 /* CircleIconButtonView.swift */; };
@@ -47,6 +48,7 @@
 		FA3C18272BE162F50080F474 /* AccountsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsModel.swift; sourceTree = "<group>"; };
 		FA3C182A2BE1687F0080F474 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		FA3C182C2BE178850080F474 /* TextModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifiers.swift; sourceTree = "<group>"; };
+		FA739C752BEBEEF300ACF6D7 /* LoadingShimmeringModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingShimmeringModifier.swift; sourceTree = "<group>"; };
 		FA91A50C2BE946E900CD5D33 /* AccountCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCellView.swift; sourceTree = "<group>"; };
 		FA91A50E2BE94A6800CD5D33 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		FA91A5102BE94B0000CD5D33 /* CircleIconButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleIconButtonView.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				FA3C182C2BE178850080F474 /* TextModifiers.swift */,
+				FA739C752BEBEEF300ACF6D7 /* LoadingShimmeringModifier.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA0DE9C72BE00F4900E49343 /* Strings+Generated.swift in Sources */,
+				FA739C762BEBEEF300ACF6D7 /* LoadingShimmeringModifier.swift in Sources */,
 				FAB248B82BDFF6C700D21514 /* Constants.swift in Sources */,
 				FAB248B02BDFF59E00D21514 /* AppState.swift in Sources */,
 				FACA0FFE2BEA9FCD00DD6D5F /* AccountMovementCellView.swift in Sources */,
@@ -536,6 +540,7 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GU2H7A9W6Z;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -576,6 +581,7 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GU2H7A9W6Z;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;

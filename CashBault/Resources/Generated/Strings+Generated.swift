@@ -32,6 +32,8 @@ internal enum L10n {
   internal static let homeActionScheduled = L10n.tr("Localizable", "home_action_scheduled", fallback: "Scheduled")
   /// Send money
   internal static let homeActionSendMoney = L10n.tr("Localizable", "home_action_send_money", fallback: "Send money")
+  /// You have no movements
+  internal static let noMovements = L10n.tr("Localizable", "no_movements", fallback: "You have no movements")
   /// Pending
   internal static let pending = L10n.tr("Localizable", "pending", fallback: "Pending")
   /// Cards
