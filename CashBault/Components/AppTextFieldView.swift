@@ -91,7 +91,6 @@ struct AppTextFieldView: View {
                 }
                 .modifier(TextModifier(size: 18, weight: .regular, color: Asset.Colors.primaryColor.swiftUIColor))
                 .animation(.easeInOut(duration: 0.05), value: value.isEmpty)
-                
                 if isSecure {
                     Button {
                         isTextVisible.toggle()
@@ -104,7 +103,10 @@ struct AppTextFieldView: View {
             }
             .padding()
             .frame(height: 60)
-            .background(RoundedRectangle(cornerRadius: 5))
+            .background(
+                RoundedRectangle(cornerRadius: 5)
+                    .fill(Asset.Colors.background.swiftUIColor)
+            )
             Text(errorMessage)
                 .modifier(TextModifier(size: 14, weight: .regular, color: Asset.Colors.error.swiftUIColor))
                 .padding(.horizontal, 8)
@@ -116,17 +118,18 @@ struct AppTextFieldView: View {
     }
     
     private func validateValue(value: String) {
-        var hasError: Bool = false
+        var errorMsg: String = ""
         validators.forEach { validator in
             if !validator.isValid(value: value) {
-                isValid = false
-                errorMessage = validator.errorMessage
-                hasError = true
+                errorMsg = validator.errorMessage
             }
         }
-        if !hasError {
+        if errorMsg.isEmpty {
             isValid = true
             errorMessage = ""
+        } else {
+            isValid = false
+            errorMessage = errorMsg
         }
     }
 }

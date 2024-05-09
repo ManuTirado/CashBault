@@ -23,17 +23,24 @@ struct LoginView: View {
     @State private var isPasswordValid: Bool = false
     
     var body: some View {
-        VStack {
-            Text(L10n.appName)
-                .modifier(TextModifier(size: 40, weight: .bold, color: Asset.Colors.primaryColor.swiftUIColor))
-                .frame(alignment: .top)
-            Spacer()
-            textFields
-            Spacer()
-            buttons
-            Spacer()
+        ZStack {
+            Color.clear
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    focusedField = nil
+                }
+            VStack {
+                Text(L10n.appName)
+                    .modifier(TextModifier(size: 40, weight: .bold, color: Asset.Colors.primaryColor.swiftUIColor))
+                    .frame(alignment: .top)
+                Spacer()
+                textFields
+                Spacer()
+                buttons
+                Spacer()
+            }
+            .disabled(isLoading ? true : false)
         }
-        .disabled(isLoading ? true : false)
         .toastView(toast: $toast)
     }
     
@@ -52,7 +59,7 @@ struct LoginView: View {
     
     @ViewBuilder
     var buttons: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: 8) {
             Button {
                 Task {
                     await doLogin()
@@ -83,6 +90,7 @@ struct LoginView: View {
             } label: {
                 Text(L10n.useBiometricLabel)
                     .modifier(TextModifier(size: 14, weight: .bold, color: Asset.Colors.primaryColor.swiftUIColor))
+                    .padding()
             }
         }
     }
@@ -110,6 +118,7 @@ extension LoginView {
     
     private func doBiometricLogin() async {
         // TODO: - Implement biometric login
+        focusedField = nil
         isLoading = true
         do {
             try await appState.doBiometricLogin()
@@ -124,5 +133,6 @@ extension LoginView {
 
 #Preview {
     LoginView()
+        .background(Constants.backgroundColorGradiend)
         .environmentObject(AppState())
 }
