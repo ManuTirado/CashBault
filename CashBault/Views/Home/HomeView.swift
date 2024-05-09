@@ -87,7 +87,7 @@ struct HomeView: View {
                 movementsList
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Asset.Colors.darkBackground.swiftUIColor)
+            .background(Constants.backgroundColorGradiend)
             .customNavigationBar(
                 customCenterContent: {
                     Text(L10n.tabHomeTitle)

@@ -1,3 +1,24 @@
+"app_name" = "CashBault";
+
+"error_time_out_message" = "Looks like the server is taking to long to respond. Please try again in a while";
+"error_server_error_message" = "Could not establish connection to the server. Please try again in a while";
+"error_bad_request_message" = "An error has occurred. Please try again in a while";
+
+"email_placeholder" = "Email";
+"password_placeholder" = "Password";
+
+"login" = "Login";
+"login_error" = "An error occurred while trying to log in";
+"login_not_found_error" = "The email or password entered does not exist or does not match";
+"login_empty_fields_error" = "Fields cannot be empty";
+"login_valid_fields_error" = "Fields must be valid to continue";
+"use_biometric_label" = "Use biometric recognition";
+
+"error_empty" = "The field cannot be empty";
+"error_email" = "Incorrect email format";
+"error_password" = "The password must contain at least 8 characters and a number";
+
+
 "tab_home_title" = "Home";
 "tab_finance_title" = "Finances";
 "tab_explore_title" = "Explore";

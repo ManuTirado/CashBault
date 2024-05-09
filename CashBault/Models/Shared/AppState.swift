@@ -12,7 +12,24 @@ class AppState: ObservableObject {
     @Published var user: User?
 }
 
-struct User {
+extension AppState {
+    
+    func doLogin(email: String, password: String) async throws {
+        if email == "test@test.com" && password == "A1234567" {
+            try await Task.sleep(nanoseconds: 2_500_000_000)
+            self.user = User.Mock
+        } else {
+            throw AppError.custom(L10n.loginNotFoundError)
+        }
+    }
+    
+    func doBiometricLogin() async throws {
+        try await Task.sleep(nanoseconds: 500_000_000)
+        self.user = User.Mock
+    }
+}
+
+struct User: Equatable {
     var id: Int
     var fullName: String
     var birthDate: Date

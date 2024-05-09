@@ -22,8 +22,24 @@ internal enum L10n {
   internal static let accountTypeNormalTitle = L10n.tr("Localizable", "account_type_normal_title", fallback: "Normal account")
   /// Saving account
   internal static let accountTypeSavingTitle = L10n.tr("Localizable", "account_type_saving_title", fallback: "Saving account")
+  /// CashBault
+  internal static let appName = L10n.tr("Localizable", "app_name", fallback: "CashBault")
   /// Cancelled
   internal static let cancelled = L10n.tr("Localizable", "cancelled", fallback: "Cancelled")
+  /// Email
+  internal static let emailPlaceholder = L10n.tr("Localizable", "email_placeholder", fallback: "Email")
+  /// An error has occurred. Please try again in a while
+  internal static let errorBadRequestMessage = L10n.tr("Localizable", "error_bad_request_message", fallback: "An error has occurred. Please try again in a while")
+  /// Incorrect email format
+  internal static let errorEmail = L10n.tr("Localizable", "error_email", fallback: "Incorrect email format")
+  /// The field cannot be empty
+  internal static let errorEmpty = L10n.tr("Localizable", "error_empty", fallback: "The field cannot be empty")
+  /// The password must contain at least 8 characters and a number
+  internal static let errorPassword = L10n.tr("Localizable", "error_password", fallback: "The password must contain at least 8 characters and a number")
+  /// Could not establish connection to the server. Please try again in a while
+  internal static let errorServerErrorMessage = L10n.tr("Localizable", "error_server_error_message", fallback: "Could not establish connection to the server. Please try again in a while")
+  /// Looks like the server is taking to long to respond. Please try again in a while
+  internal static let errorTimeOutMessage = L10n.tr("Localizable", "error_time_out_message", fallback: "Looks like the server is taking to long to respond. Please try again in a while")
   /// Add money
   internal static let homeActionAddMoney = L10n.tr("Localizable", "home_action_add_money", fallback: "Add money")
   /// Insights
@@ -32,8 +48,20 @@ internal enum L10n {
   internal static let homeActionScheduled = L10n.tr("Localizable", "home_action_scheduled", fallback: "Scheduled")
   /// Send money
   internal static let homeActionSendMoney = L10n.tr("Localizable", "home_action_send_money", fallback: "Send money")
+  /// Login
+  internal static let login = L10n.tr("Localizable", "login", fallback: "Login")
+  /// Fields cannot be empty
+  internal static let loginEmptyFieldsError = L10n.tr("Localizable", "login_empty_fields_error", fallback: "Fields cannot be empty")
+  /// An error occurred while trying to log in
+  internal static let loginError = L10n.tr("Localizable", "login_error", fallback: "An error occurred while trying to log in")
+  /// The email or password entered does not exist or does not match
+  internal static let loginNotFoundError = L10n.tr("Localizable", "login_not_found_error", fallback: "The email or password entered does not exist or does not match")
+  /// Fields must be valid to continue
+  internal static let loginValidFieldsError = L10n.tr("Localizable", "login_valid_fields_error", fallback: "Fields must be valid to continue")
   /// You have no movements
   internal static let noMovements = L10n.tr("Localizable", "no_movements", fallback: "You have no movements")
+  /// Password
+  internal static let passwordPlaceholder = L10n.tr("Localizable", "password_placeholder", fallback: "Password")
   /// Pending
   internal static let pending = L10n.tr("Localizable", "pending", fallback: "Pending")
   /// Cards
@@ -44,6 +72,8 @@ internal enum L10n {
   internal static let tabFinanceTitle = L10n.tr("Localizable", "tab_finance_title", fallback: "Finances")
   /// Home
   internal static let tabHomeTitle = L10n.tr("Localizable", "tab_home_title", fallback: "Home")
+  /// Use biometric recognition
+  internal static let useBiometricLabel = L10n.tr("Localizable", "use_biometric_label", fallback: "Use biometric recognition")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

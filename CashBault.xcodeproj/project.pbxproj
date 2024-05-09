@@ -13,6 +13,9 @@
 		FA1087B72BE5571C00C94A3F /* AppNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1087B62BE5571C00C94A3F /* AppNavigationBar.swift */; };
 		FA1087B92BE560EB00C94A3F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA1087B82BE560EB00C94A3F /* Colors.xcassets */; };
 		FA1087BF2BE5649F00C94A3F /* Assets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1087BE2BE5649F00C94A3F /* Assets+Generated.swift */; };
+		FA36F34B2BED479800C33B26 /* AppTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36F34A2BED479800C33B26 /* AppTextFieldView.swift */; };
+		FA36F34D2BED4B5E00C33B26 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36F34C2BED4B5E00C33B26 /* ToastView.swift */; };
+		FA36F34F2BED5EE200C33B26 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36F34E2BED5EE200C33B26 /* ErrorModel.swift */; };
 		FA3C18282BE162F50080F474 /* AccountsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3C18272BE162F50080F474 /* AccountsModel.swift */; };
 		FA3C182B2BE168800080F474 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3C182A2BE1687F0080F474 /* LoginView.swift */; };
 		FA3C182D2BE178850080F474 /* TextModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3C182C2BE178850080F474 /* TextModifiers.swift */; };
@@ -45,6 +48,9 @@
 		FA1087B62BE5571C00C94A3F /* AppNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationBar.swift; sourceTree = "<group>"; };
 		FA1087B82BE560EB00C94A3F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		FA1087BE2BE5649F00C94A3F /* Assets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Assets+Generated.swift"; sourceTree = "<group>"; };
+		FA36F34A2BED479800C33B26 /* AppTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextFieldView.swift; sourceTree = "<group>"; };
+		FA36F34C2BED4B5E00C33B26 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		FA36F34E2BED5EE200C33B26 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		FA3C18272BE162F50080F474 /* AccountsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsModel.swift; sourceTree = "<group>"; };
 		FA3C182A2BE1687F0080F474 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		FA3C182C2BE178850080F474 /* TextModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifiers.swift; sourceTree = "<group>"; };
@@ -163,6 +169,8 @@
 				FA1087B62BE5571C00C94A3F /* AppNavigationBar.swift */,
 				FA91A50E2BE94A6800CD5D33 /* LoaderView.swift */,
 				FA91A5102BE94B0000CD5D33 /* CircleIconButtonView.swift */,
+				FA36F34A2BED479800C33B26 /* AppTextFieldView.swift */,
+				FA36F34C2BED4B5E00C33B26 /* ToastView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -232,6 +240,7 @@
 				FAB248AF2BDFF59E00D21514 /* AppState.swift */,
 				FAB248B72BDFF6C700D21514 /* Constants.swift */,
 				FA91A5122BE955FD00CD5D33 /* Util.swift */,
+				FA36F34E2BED5EE200C33B26 /* ErrorModel.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -380,6 +389,9 @@
 				FA739C762BEBEEF300ACF6D7 /* LoadingShimmeringModifier.swift in Sources */,
 				FAB248B82BDFF6C700D21514 /* Constants.swift in Sources */,
 				FAB248B02BDFF59E00D21514 /* AppState.swift in Sources */,
+				FA36F34B2BED479800C33B26 /* AppTextFieldView.swift in Sources */,
+				FA36F34D2BED4B5E00C33B26 /* ToastView.swift in Sources */,
+				FA36F34F2BED5EE200C33B26 /* ErrorModel.swift in Sources */,
 				FACA0FFE2BEA9FCD00DD6D5F /* AccountMovementCellView.swift in Sources */,
 				FA1087B72BE5571C00C94A3F /* AppNavigationBar.swift in Sources */,
 				FAB248812BDFF0D700D21514 /* ContentView.swift in Sources */,

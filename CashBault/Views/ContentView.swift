@@ -13,6 +13,9 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
+            Constants.backgroundColorGradiend
+                .ignoresSafeArea()
+            
             if appState.user != nil {
                 AppTabView()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
