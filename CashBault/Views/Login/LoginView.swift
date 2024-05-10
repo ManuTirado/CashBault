@@ -70,12 +70,7 @@ struct LoginView: View {
                     .opacity(isLoading ? 0 : 1)
                     .frame(maxWidth: .infinity)
                     .padding()
-                    .background(
-                        LinearGradient(colors: [
-                            Asset.Colors.accentColor.swiftUIColor,
-                            Asset.Colors.darkAccentColor.swiftUIColor
-                        ], startPoint: .topLeading, endPoint: .bottomTrailing)
-                    )
+                    .background(Constants.accentColorGradient)
                     .clipShape(Capsule())
                     .padding(.horizontal, 32)
                     .overlay {
@@ -133,6 +128,6 @@ extension LoginView {
 
 #Preview {
     LoginView()
-        .background(Constants.backgroundColorGradiend)
+        .background(Constants.backgroundColorGradient)
         .environmentObject(AppState())
 }

@@ -24,7 +24,7 @@ extension AppState {
     }
     
     func doBiometricLogin() async throws {
-        try await Task.sleep(nanoseconds: 500_000_000)
+        try await Task.sleep(nanoseconds: 100_000_000)
         self.user = User.Mock
     }
 }

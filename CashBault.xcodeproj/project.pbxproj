@@ -24,6 +24,9 @@
 		FA91A50F2BE94A6800CD5D33 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA91A50E2BE94A6800CD5D33 /* LoaderView.swift */; };
 		FA91A5112BE94B0000CD5D33 /* CircleIconButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA91A5102BE94B0000CD5D33 /* CircleIconButtonView.swift */; };
 		FA91A5132BE955FD00CD5D33 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA91A5122BE955FD00CD5D33 /* Util.swift */; };
+		FAA1B1892BEEA16000A2175C /* AppButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA1B1882BEEA16000A2175C /* AppButtonView.swift */; };
+		FAA1B18C2BEEA5EC00A2175C /* FinanceAccountCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA1B18B2BEEA5EC00A2175C /* FinanceAccountCellView.swift */; };
+		FAA1B18E2BEEA9D300A2175C /* FinanceAddAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA1B18D2BEEA9D300A2175C /* FinanceAddAccountView.swift */; };
 		FAB2487F2BDFF0D700D21514 /* CashBaultApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB2487E2BDFF0D700D21514 /* CashBaultApp.swift */; };
 		FAB248812BDFF0D700D21514 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB248802BDFF0D700D21514 /* ContentView.swift */; };
 		FAB248832BDFF0DD00D21514 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB248822BDFF0DD00D21514 /* Images.xcassets */; };
@@ -59,6 +62,9 @@
 		FA91A50E2BE94A6800CD5D33 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		FA91A5102BE94B0000CD5D33 /* CircleIconButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleIconButtonView.swift; sourceTree = "<group>"; };
 		FA91A5122BE955FD00CD5D33 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		FAA1B1882BEEA16000A2175C /* AppButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButtonView.swift; sourceTree = "<group>"; };
+		FAA1B18B2BEEA5EC00A2175C /* FinanceAccountCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceAccountCellView.swift; sourceTree = "<group>"; };
+		FAA1B18D2BEEA9D300A2175C /* FinanceAddAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceAddAccountView.swift; sourceTree = "<group>"; };
 		FAB2487B2BDFF0D700D21514 /* CashBault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CashBault.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB2487E2BDFF0D700D21514 /* CashBaultApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashBaultApp.swift; sourceTree = "<group>"; };
 		FAB248802BDFF0D700D21514 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -129,6 +135,15 @@
 			path = SubViews;
 			sourceTree = "<group>";
 		};
+		FAA1B18A2BEEA5D900A2175C /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				FAA1B18B2BEEA5EC00A2175C /* FinanceAccountCellView.swift */,
+				FAA1B18D2BEEA9D300A2175C /* FinanceAddAccountView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
 		FAB248722BDFF0D700D21514 = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +186,7 @@
 				FA91A5102BE94B0000CD5D33 /* CircleIconButtonView.swift */,
 				FA36F34A2BED479800C33B26 /* AppTextFieldView.swift */,
 				FA36F34C2BED4B5E00C33B26 /* ToastView.swift */,
+				FAA1B1882BEEA16000A2175C /* AppButtonView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -198,8 +214,11 @@
 		FAB248AD2BDFF4A500D21514 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FAB248B62BDFF6B700D21514 /* Shared */,
+				FAB248AF2BDFF59E00D21514 /* AppState.swift */,
+				FA36F34E2BED5EE200C33B26 /* ErrorModel.swift */,
 				FA3C18272BE162F50080F474 /* AccountsModel.swift */,
+				FAB248B72BDFF6C700D21514 /* Constants.swift */,
+				FA91A5122BE955FD00CD5D33 /* Util.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -208,8 +227,8 @@
 			isa = PBXGroup;
 			children = (
 				FAB248802BDFF0D700D21514 /* ContentView.swift */,
-				FA3C18292BE168650080F474 /* Login */,
 				FAB248B12BDFF60D00D21514 /* Splash */,
+				FA3C18292BE168650080F474 /* Login */,
 				FAB248B22BDFF61800D21514 /* Home */,
 				FAB248B92BDFF7B800D21514 /* Finance */,
 				FAB248BA2BDFF7CF00D21514 /* Explore */,
@@ -234,21 +253,11 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		FAB248B62BDFF6B700D21514 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				FAB248AF2BDFF59E00D21514 /* AppState.swift */,
-				FAB248B72BDFF6C700D21514 /* Constants.swift */,
-				FA91A5122BE955FD00CD5D33 /* Util.swift */,
-				FA36F34E2BED5EE200C33B26 /* ErrorModel.swift */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
 		FAB248B92BDFF7B800D21514 /* Finance */ = {
 			isa = PBXGroup;
 			children = (
 				FAB248BE2BDFF80700D21514 /* FinanceView.swift */,
+				FAA1B18A2BEEA5D900A2175C /* SubViews */,
 			);
 			path = Finance;
 			sourceTree = "<group>";
@@ -392,12 +401,15 @@
 				FA36F34B2BED479800C33B26 /* AppTextFieldView.swift in Sources */,
 				FA36F34D2BED4B5E00C33B26 /* ToastView.swift in Sources */,
 				FA36F34F2BED5EE200C33B26 /* ErrorModel.swift in Sources */,
+				FAA1B18C2BEEA5EC00A2175C /* FinanceAccountCellView.swift in Sources */,
 				FACA0FFE2BEA9FCD00DD6D5F /* AccountMovementCellView.swift in Sources */,
+				FAA1B18E2BEEA9D300A2175C /* FinanceAddAccountView.swift in Sources */,
 				FA1087B72BE5571C00C94A3F /* AppNavigationBar.swift in Sources */,
 				FAB248812BDFF0D700D21514 /* ContentView.swift in Sources */,
 				FAB248C32BDFF81F00D21514 /* CardsView.swift in Sources */,
 				FAB248BF2BDFF80700D21514 /* FinanceView.swift in Sources */,
 				FA3C182B2BE168800080F474 /* LoginView.swift in Sources */,
+				FAA1B1892BEEA16000A2175C /* AppButtonView.swift in Sources */,
 				FA91A50D2BE946E900CD5D33 /* AccountCellView.swift in Sources */,
 				FAB248BD2BDFF7FE00D21514 /* HomeView.swift in Sources */,
 				FAB248B52BDFF69000D21514 /* AppTabView.swift in Sources */,

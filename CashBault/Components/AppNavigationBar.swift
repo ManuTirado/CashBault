@@ -14,18 +14,25 @@ struct AppNavigationBarModifier<LeftView, CentralView, RightView>: ViewModifier 
     
     func body(content: Content) -> some View {
         VStack(spacing: 0) {
-            HStack {
-                Color.clear
-                    .overlay(customLeftContent(), alignment: .center)
-                    .frame(width: 60)
-                Color.clear
-                    .overlay(customCenterContent(), alignment: .center)
-                Color.clear
-                    .overlay(customRightContent(), alignment: .center)
-                    .frame(width: 60)
+            Group {
+                HStack {
+                    Color.clear
+                        .overlay(customLeftContent(), alignment: .center)
+                        .frame(width: 60)
+                    Color.clear
+                        .overlay(customCenterContent(), alignment: .center)
+                    Color.clear
+                        .overlay(customRightContent(), alignment: .center)
+                        .frame(width: 60)
+                }
+                .frame(maxWidth: .infinity)
+                .frame(height: 40)
+                
+                Rectangle()
+                    .fill(.black.opacity(0.5))
+                    .frame(height: 1)
+                    
             }
-            .frame(maxWidth: .infinity)
-            .frame(height: 40)
             .background(Asset.Colors.background.swiftUIColor)
             content
                 .navigationBarHidden(true)
@@ -54,6 +61,8 @@ extension View {
         VStack {
             Text("Hello, World!")
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Constants.backgroundColorGradient)
         .customNavigationBar(
             customLeftContent: {
                 Image(systemName: "arrow.left")

@@ -40,6 +40,20 @@ internal enum L10n {
   internal static let errorServerErrorMessage = L10n.tr("Localizable", "error_server_error_message", fallback: "Could not establish connection to the server. Please try again in a while")
   /// Looks like the server is taking to long to respond. Please try again in a while
   internal static let errorTimeOutMessage = L10n.tr("Localizable", "error_time_out_message", fallback: "Looks like the server is taking to long to respond. Please try again in a while")
+  /// Add account
+  internal static let financeAddAccountLabel = L10n.tr("Localizable", "finance_add_account_label", fallback: "Add account")
+  /// Add new account
+  internal static let financeAddAccountTitle = L10n.tr("Localizable", "finance_add_account_title", fallback: "Add new account")
+  /// You don't have an account yet
+  internal static let financeNoAccountLabel = L10n.tr("Localizable", "finance_no_account_label", fallback: "You don't have an account yet")
+  /// Normal accounts
+  internal static let financeNormalAccountsTitle = L10n.tr("Localizable", "finance_normal_accounts_title", fallback: "Normal accounts")
+  /// Saving accounts
+  internal static let financeSavingAccountsTitle = L10n.tr("Localizable", "finance_saving_accounts_title", fallback: "Saving accounts")
+  /// Total balance
+  internal static let financeTotalBalanceLabel = L10n.tr("Localizable", "finance_total_balance_label", fallback: "Total balance")
+  /// No balance available
+  internal static let financeTotalBalanceNoBalanceLabel = L10n.tr("Localizable", "finance_total_balance_no_balance_label", fallback: "No balance available")
   /// Add money
   internal static let homeActionAddMoney = L10n.tr("Localizable", "home_action_add_money", fallback: "Add money")
   /// Insights

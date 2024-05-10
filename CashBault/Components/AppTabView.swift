@@ -61,8 +61,10 @@ struct AppTabView: View {
             TabView(selection: $selectedTab) {
                 HomeView()
                     .tag(Tabs.homepage.id)
+                    .environmentObject(accountsModel)
                 FinanceView()
                     .tag(Tabs.finance.id)
+                    .environmentObject(accountsModel)
                 ExploreView()
                     .tag(Tabs.explore.id)
                 CardsView()
@@ -84,7 +86,6 @@ struct AppTabView: View {
             .frame(height: 50)
             .background(Asset.Colors.background.swiftUIColor)
         }
-        .environmentObject(accountsModel)
         .onAppear {
             Task {
                 await getUserAccounts()
@@ -135,7 +136,7 @@ extension AppTabView {
             accountsModel.errorGettingAccounts = false
             accountsModel.loadingAccounts = true
             try await Task.sleep(nanoseconds: 5_000_000_000)
-            accountsModel.accounts = [Account.Mock1, Account.Mock2]
+            accountsModel.accounts = [Account.Mock1, Account.Mock2, Account.Mock3]
             accountsModel.selectedAccount = accountsModel.accounts?.first
         } catch {
             accountsModel.errorGettingAccounts = true

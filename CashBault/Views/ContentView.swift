@@ -13,7 +13,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            Constants.backgroundColorGradiend
+            Constants.backgroundColorGradient
                 .ignoresSafeArea()
             
             if appState.user != nil {

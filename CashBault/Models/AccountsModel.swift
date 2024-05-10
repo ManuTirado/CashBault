@@ -11,7 +11,7 @@ class AccountsModel: ObservableObject {
     
     @Published var accounts: [Account]?
     @Published var selectedAccount: Account?
-    @Published var loadingAccounts: Bool = true
+    @Published var loadingAccounts: Bool = false
     @Published var errorGettingAccounts: Bool = false
 }
 
@@ -84,6 +84,9 @@ extension Account {
                                                                                                                                   AccountMovement.Mock3,
                                                                                                                                   AccountMovement.Mock4])
     }
+    static var Mock3: Account {
+        .init(id: 3, iban: "PL63RABO1665251951", type: .normal, name: "Foreign Account", currency: "GBP", currencySymbol: "£", balance: 563.22, movements: [])
+    }
 }
 
 extension AccountMovement {
@@ -123,7 +126,8 @@ extension AccountMovement {
 extension AccountsModel {
     static var Mock: AccountsModel {
         let model = AccountsModel()
-        model.accounts = [Account.Mock1, Account.Mock2]
+        model.accounts = [Account.Mock1, Account.Mock2, Account.Mock3]
+//        model.accounts = []
         model.selectedAccount = model.accounts?.first
         return model
     }

@@ -35,6 +35,14 @@
 "account_movement_sender_to" = "To %@";
 "account_movement_sender_from" = "From %@";
 
+"finance_total_balance_label" = "Total balance";
+"finance_total_balance_no_balance_label" = "No balance available";
+"finance_no_account_label" = "You don't have an account yet";
+"finance_add_account_label" = "Add account";
+"finance_normal_accounts_title" = "Normal accounts";
+"finance_saving_accounts_title" = "Saving accounts";
+"finance_add_account_title" = "Add new account";
+
 "pending" = "Pending";
 "cancelled" = "Cancelled";
 "no_movements" = "You have no movements";

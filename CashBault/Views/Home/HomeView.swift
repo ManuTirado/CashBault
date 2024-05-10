@@ -86,8 +86,9 @@ struct HomeView: View {
                 accountActions
                 movementsList
             }
+            .animation(.easeIn(duration: 0.2), value: isLoading)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Constants.backgroundColorGradiend)
+            .background(Constants.backgroundColorGradient)
             .customNavigationBar(
                 customCenterContent: {
                     Text(L10n.tabHomeTitle)
