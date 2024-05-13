@@ -29,6 +29,14 @@ extension AppState {
     }
 }
 
+extension AppState {
+    public static var Mock: AppState {
+        let appState = AppState()
+        appState.user = User.Mock
+        return appState
+    }
+}
+
 struct User: Equatable {
     var id: Int
     var fullName: String

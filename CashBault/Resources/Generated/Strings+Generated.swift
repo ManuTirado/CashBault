@@ -10,6 +10,8 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// Accept
+  internal static let accept = L10n.tr("Localizable", "accept", fallback: "Accept")
   /// From %@
   internal static func accountMovementSenderFrom(_ p1: Any) -> String {
     return L10n.tr("Localizable", "account_movement_sender_from", String(describing: p1), fallback: "From %@")
@@ -24,6 +26,8 @@ internal enum L10n {
   internal static let accountTypeSavingTitle = L10n.tr("Localizable", "account_type_saving_title", fallback: "Saving account")
   /// CashBault
   internal static let appName = L10n.tr("Localizable", "app_name", fallback: "CashBault")
+  /// Cancel
+  internal static let cancel = L10n.tr("Localizable", "cancel", fallback: "Cancel")
   /// Cancelled
   internal static let cancelled = L10n.tr("Localizable", "cancelled", fallback: "Cancelled")
   /// Email
@@ -80,14 +84,26 @@ internal enum L10n {
   internal static let pending = L10n.tr("Localizable", "pending", fallback: "Pending")
   /// Cards
   internal static let tabCardsTitle = L10n.tr("Localizable", "tab_cards_title", fallback: "Cards")
-  /// Explore
-  internal static let tabExploreTitle = L10n.tr("Localizable", "tab_explore_title", fallback: "Explore")
   /// Finances
   internal static let tabFinanceTitle = L10n.tr("Localizable", "tab_finance_title", fallback: "Finances")
   /// Home
   internal static let tabHomeTitle = L10n.tr("Localizable", "tab_home_title", fallback: "Home")
+  /// User
+  internal static let tabUserTitle = L10n.tr("Localizable", "tab_user_title", fallback: "User")
   /// Use biometric recognition
   internal static let useBiometricLabel = L10n.tr("Localizable", "use_biometric_label", fallback: "Use biometric recognition")
+  /// Configuration
+  internal static let userConfigLabel = L10n.tr("Localizable", "user_config_label", fallback: "Configuration")
+  /// Language
+  internal static let userConfigLanguage = L10n.tr("Localizable", "user_config_language", fallback: "Language")
+  /// Are you sure you want to log out?
+  internal static let userLogoutConfirmationMessage = L10n.tr("Localizable", "user_logout_confirmation_message", fallback: "Are you sure you want to log out?")
+  /// Log out
+  internal static let userLogoutConfirmationTitle = L10n.tr("Localizable", "user_logout_confirmation_title", fallback: "Log out")
+  /// Log out
+  internal static let userLogoutLabel = L10n.tr("Localizable", "user_logout_label", fallback: "Log out")
+  /// Personal info
+  internal static let userPersonalInfoLabel = L10n.tr("Localizable", "user_personal_info_label", fallback: "Personal info")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces
