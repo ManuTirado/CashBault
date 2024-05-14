@@ -62,8 +62,9 @@ struct AppTextFieldView: View {
     var isSecure: Bool = false
     var keyboardType: UIKeyboardType
     var validators: [TextFieldValidators]
+    var leftImage: Image?
     
-    init(value: Binding<String>, isValid: Binding<Bool> = .constant(true), placeHolder: String, isSecure: Bool, keyboard: UIKeyboardType = .default, validators: [TextFieldValidators] = []) {
+    init(value: Binding<String>, isValid: Binding<Bool> = .constant(true), placeHolder: String, isSecure: Bool, keyboard: UIKeyboardType = .default, validators: [TextFieldValidators] = [], leftImage: Image? = nil) {
         self.isTextVisible = !isSecure
         self._value = value
         self._isValid = isValid
@@ -71,11 +72,19 @@ struct AppTextFieldView: View {
         self.isSecure = isSecure
         self.keyboardType = keyboard
         self.validators = validators
+        self.leftImage = leftImage
     }
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
+                if let leftImage {
+                    leftImage
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .foregroundStyle(Asset.Colors.primaryColor.swiftUIColor)
+                        .frame(width: 30)
+                }
                 ZStack(alignment: .leading) {
                     Text(placeHolder)
                         .opacity(value.isEmpty ? 1 : 0)
@@ -107,10 +116,12 @@ struct AppTextFieldView: View {
                 RoundedRectangle(cornerRadius: 5)
                     .fill(Asset.Colors.background.swiftUIColor)
             )
-            Text(errorMessage)
-                .modifier(TextModifier(size: 14, weight: .regular, color: Asset.Colors.error.swiftUIColor))
-                .padding(.horizontal, 8)
-                .animation(.easeInOut(duration: 0.2), value: errorMessage)
+            if !errorMessage.isEmpty {
+                Text(errorMessage)
+                    .modifier(TextModifier(size: 14, weight: .regular, color: Asset.Colors.error.swiftUIColor))
+                    .padding(.horizontal, 8)
+                    .animation(.easeInOut(duration: 0.2), value: errorMessage)
+            }
         }
         .onChange(of: value) { _, newValue in
             validateValue(value: newValue)
@@ -134,10 +145,42 @@ struct AppTextFieldView: View {
     }
 }
 
+struct AppTextFieldStaticView: View {
+    
+    let value: String
+    var leftImage: Image?
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            HStack {
+                if let leftImage {
+                    leftImage
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .foregroundStyle(Asset.Colors.primaryColor.swiftUIColor)
+                        .frame(width: 30)
+                }
+                Text(value)
+                    .modifier(TextModifier(size: 18, weight: .regular, color: Asset.Colors.primaryColor.swiftUIColor))
+                    .animation(.easeInOut(duration: 0.05), value: value.isEmpty)
+                Spacer()
+            }
+            .padding()
+            .frame(height: 60)
+            .background(
+                RoundedRectangle(cornerRadius: 5)
+                    .fill(Asset.Colors.background.swiftUIColor)
+            )
+        }
+    }
+}
+
 #Preview {
     VStack {
         AppTextFieldView(value: .constant(""), placeHolder: "Placeholder", isSecure: false)
         AppTextFieldView(value: .constant(""), placeHolder: "Placeholder", isSecure: true)
+        AppTextFieldStaticView(value: "Test", leftImage: Image(systemName: "sofa"))
+        AppTextFieldStaticView(value: "Test", leftImage: Image(systemName: "phone"))
     }
     .padding()
 }

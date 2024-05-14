@@ -24,8 +24,12 @@ internal enum L10n {
   internal static let accountTypeNormalTitle = L10n.tr("Localizable", "account_type_normal_title", fallback: "Normal account")
   /// Saving account
   internal static let accountTypeSavingTitle = L10n.tr("Localizable", "account_type_saving_title", fallback: "Saving account")
+  /// Address
+  internal static let addressPlaceholder = L10n.tr("Localizable", "address_placeholder", fallback: "Address")
   /// CashBault
   internal static let appName = L10n.tr("Localizable", "app_name", fallback: "CashBault")
+  /// Birth Date
+  internal static let birthDatePlaceholder = L10n.tr("Localizable", "birth_date_placeholder", fallback: "Birth Date")
   /// Cancel
   internal static let cancel = L10n.tr("Localizable", "cancel", fallback: "Cancel")
   /// Cancelled
@@ -58,6 +62,8 @@ internal enum L10n {
   internal static let financeTotalBalanceLabel = L10n.tr("Localizable", "finance_total_balance_label", fallback: "Total balance")
   /// No balance available
   internal static let financeTotalBalanceNoBalanceLabel = L10n.tr("Localizable", "finance_total_balance_no_balance_label", fallback: "No balance available")
+  /// Full name
+  internal static let fullNamePlaceholder = L10n.tr("Localizable", "full_name_placeholder", fallback: "Full name")
   /// Add money
   internal static let homeActionAddMoney = L10n.tr("Localizable", "home_action_add_money", fallback: "Add money")
   /// Insights
@@ -82,6 +88,10 @@ internal enum L10n {
   internal static let passwordPlaceholder = L10n.tr("Localizable", "password_placeholder", fallback: "Password")
   /// Pending
   internal static let pending = L10n.tr("Localizable", "pending", fallback: "Pending")
+  /// Phone
+  internal static let phonePlaceholder = L10n.tr("Localizable", "phone_placeholder", fallback: "Phone")
+  /// Save
+  internal static let save = L10n.tr("Localizable", "save", fallback: "Save")
   /// Cards
   internal static let tabCardsTitle = L10n.tr("Localizable", "tab_cards_title", fallback: "Cards")
   /// Finances

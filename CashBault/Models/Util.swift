@@ -15,11 +15,14 @@ struct Util {
     
     enum FormattTypes {
         case weekName_day_monthName
+        case day_month_year
         
         var formattStr: String {
             switch self {
             case .weekName_day_monthName:
                 "EEEE d MMMM"
+            case .day_month_year:
+                "dd/MM/yyyy"
             }
         }
     }

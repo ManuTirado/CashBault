@@ -6,6 +6,10 @@
 
 "email_placeholder" = "Email";
 "password_placeholder" = "Password";
+"full_name_placeholder" = "Full name";
+"address_placeholder" = "Address";
+"birth_date_placeholder" = "Birth Date";
+"phone_placeholder" = "Phone";
 
 "login" = "Login";
 "login_error" = "An error occurred while trying to log in";
@@ -55,3 +59,4 @@
 "no_movements" = "You have no movements";
 "cancel" = "Cancel";
 "accept" = "Accept";
+"save" = "Save";

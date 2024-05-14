@@ -8,29 +8,38 @@
 import SwiftUI
 
 struct AccountInfoCellView: View {
-    
+
+    @Binding var value: String
     let image: Image
-    let title: String
-    let action: () -> Void
+    let placeHolder: String
+    
+    var body: some View {
+        AppTextFieldView(value: $value, isValid: .constant(true), placeHolder: placeHolder, isSecure: false, validators: [.empty], leftImage: image)
+    }
+}
+
+struct AccountInfoStaticCellView: View {
+
+    let value: String
+    let image: Image
+    var action: (() -> Void)?
     
     var body: some View {
         Button {
-            action()
+            action?()
         } label: {
-            HStack(spacing: 0) {
-                image
-                    .foregroundStyle(Asset.Colors.primaryColor.swiftUIColor)
-                    .padding(.trailing, 16)
-                Text(title)
-                    .modifier(TextModifier(size: 18, weight: .heavy, color: Asset.Colors.primaryColor.swiftUIColor))
-                Spacer()
-            }
-            .padding()
-            .background(Asset.Colors.background.swiftUIColor)
+            AppTextFieldStaticView(value: value, leftImage: image)
         }
     }
 }
 
 #Preview {
-    AccountInfoCellView(image: Image(systemName: "phone"), title: "test") { }
+    VStack {
+        ScrollView {
+            DropDownButtonView(title: "Test", openedView: AccountInfoCellView(value: .constant("test"), image: Image(systemName: "sofa"), placeHolder: "Placeholder"))
+        }
+    }
+    .frame(maxWidth: .infinity, maxHeight: .infinity)
+    .padding()
+    .background(Color.yellow)
 }

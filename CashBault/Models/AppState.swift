@@ -45,6 +45,26 @@ struct User: Equatable {
     var phone: String
     var address: String
     var country: String
+    
+    init(id: Int, fullName: String, birthDate: Date, email: String, phone: String, address: String, country: String) {
+        self.id = id
+        self.fullName = fullName
+        self.birthDate = birthDate
+        self.email = email
+        self.phone = phone
+        self.address = address
+        self.country = country
+    }
+    
+    init() {
+        self.id = -1
+        self.fullName = ""
+        self.birthDate = Date()
+        self.email = ""
+        self.phone = ""
+        self.address = ""
+        self.country = ""
+    }
 }
 
 extension User {
