@@ -29,7 +29,7 @@ struct Util {
     
     static func getFormattedDate(date: Date, formatt: FormattTypes) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale.current
+        dateFormatter.locale = Locale(identifier: UserDefaults.standard.string(forKey: Constants.defaultsLangKey) ?? "en")
         dateFormatter.dateFormat = formatt.formattStr
         return dateFormatter.string(from: date)
     }

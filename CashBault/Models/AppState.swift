@@ -6,10 +6,16 @@
 //
 
 import Foundation
+import SwiftUI
 
 class AppState: ObservableObject {
     
+    @AppStorage(Constants.defaultsLangKey) var lang = Locale.current.language.languageCode?.identifier ?? ""
     @Published var user: User?
+    
+    init(user: User? = nil) {
+        self.user = user
+    }
 }
 
 extension AppState {
@@ -44,16 +50,14 @@ struct User: Equatable {
     var email: String
     var phone: String
     var address: String
-    var country: String
     
-    init(id: Int, fullName: String, birthDate: Date, email: String, phone: String, address: String, country: String) {
+    init(id: Int, fullName: String, birthDate: Date, email: String, phone: String, address: String) {
         self.id = id
         self.fullName = fullName
         self.birthDate = birthDate
         self.email = email
         self.phone = phone
         self.address = address
-        self.country = country
     }
     
     init() {
@@ -63,13 +67,12 @@ struct User: Equatable {
         self.email = ""
         self.phone = ""
         self.address = ""
-        self.country = ""
     }
 }
 
 extension User {
     static var Mock: User {
         
-        .init(id: 1, fullName: "Israhel Nanaea Irma", birthDate: Date(), email: "test@test.com", phone: "+34666666666", address: "California 3", country: "Spain")
+        .init(id: 1, fullName: "Israhel Nanaea Irma", birthDate: Date(), email: "test@test.com", phone: "+34666666666", address: "California 3")
     }
 }

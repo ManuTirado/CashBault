@@ -53,6 +53,8 @@
 "user_logout_label" = "Log out";
 "user_logout_confirmation_title" = "Log out";
 "user_logout_confirmation_message" = "Are you sure you want to log out?";
+"user_save_changes_confirmation_title" = "Reload";
+"user_save_changes_confirmation_message" = "It is necessary to reload the app to apply the changes";
 
 "pending" = "Pending";
 "cancelled" = "Cancelled";

@@ -9,6 +9,14 @@ import Foundation
 import SwiftUI
 
 struct Constants {
+    
+    enum AppLangs: String, CaseIterable {
+        case en
+        case es
+    }
+    
+    static let defaultsLangKey = "user_defaults_lang"
+    
     static let backgroundColorGradient = LinearGradient(colors: [Asset.Colors.background.swiftUIColor,
                                                                  Asset.Colors.darkBackground.swiftUIColor],
                                                         startPoint: .topLeading, endPoint: .bottomTrailing)

@@ -21,10 +21,13 @@ struct UserView: View {
     @State private var toast: Toast? = nil
     @State private var isLoading: Bool = false
     @State private var showDatePicker: Bool = false
+    @State private var showLangPicker: Bool = false
     @State private var showLogoutConfirmation: Bool = false
+    @State private var showReloadAppPopup: Bool = false
     @State private var userAux: User = User()
+    @State private var langAux: String = ""
     var somethingChanged: Bool {
-        return appState.user != userAux
+        return appState.user != userAux || langAux != appState.lang
     }
     
     var body: some View {
@@ -33,6 +36,7 @@ struct UserView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Constants.backgroundColorGradient)
                 .toastView(toast: $toast)
+                .background(pickers)
                 .customNavigationBar(
                     customCenterContent: {
                         Text(L10n.tabUserTitle)
@@ -41,9 +45,6 @@ struct UserView: View {
                 )
                 .onAppear {
                     self.initData()
-                }
-                .fullScreenCover(isPresented: $showDatePicker) {
-                    datePicker
                 }
         }
     }
@@ -77,6 +78,8 @@ struct UserView: View {
             }
             if showLogoutConfirmation {
                 logoutConfirmationPopup
+            } else if showReloadAppPopup {
+                reloadAppPopup
             }
         }
     }
@@ -113,9 +116,9 @@ struct UserView: View {
     @ViewBuilder
     var config: some View {
         VStack(spacing: 0) {
-            //            AccountInfoCellView(image: Image(systemName: "globe"), title: "\(L10n.userConfigLanguage) - TODO") {
-            //
-            //            }
+            AccountInfoStaticCellView(value: "\(L10n.userConfigLanguage) - \(langAux.uppercased())", image: Image(systemName: "globe")) {
+                openLangPicker()
+            }
         }
     }
     
@@ -142,9 +145,7 @@ struct UserView: View {
     var saveButton: some View {
         Button {
             focus = nil
-            Task {
-                await saveUserData()
-            }
+            shouldSaveUserData()
         } label: {
             HStack(spacing: 24) {
                 Text(L10n.save)
@@ -161,59 +162,37 @@ struct UserView: View {
     
     @ViewBuilder
     var logoutConfirmationPopup: some View {
-        ZStack {
-            Color.black.opacity(0.5)
-                .onTapGesture {
-                    showLogoutConfirmation = false
-                }
-            
-            VStack(spacing: 0) {
-                VStack(spacing: 16) {
-                    Image(systemName: "exclamationmark.triangle")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(height: 80)
-                        .foregroundStyle(Asset.Colors.error.swiftUIColor)
-                    Text(L10n.userLogoutConfirmationTitle)
-                        .modifier(TextModifier(size: 22, weight: .black, color: Asset.Colors.primaryColor.swiftUIColor))
-                        .padding(.bottom, 32)
-                    Text(L10n.userLogoutConfirmationMessage)
-                        .modifier(TextModifier(size: 20, weight: .regular, color: Asset.Colors.primaryColor.swiftUIColor))
-                        .multilineTextAlignment(.center)
-                        .padding(.bottom, 8)
-                }
-                .padding()
-                Rectangle()
-                    .fill(Asset.Colors.secondaryColor.swiftUIColor)
-                    .frame(height: 1)
-                HStack(spacing: 16) {
-                    Spacer(minLength: 0)
-                    Button {
-                        showLogoutConfirmation = false
-                    } label: {
-                        Text(L10n.cancel.uppercased())
-                            .modifier(TextModifier(size: 18, weight: .bold, color: Asset.Colors.primaryColor.swiftUIColor))
-                            .padding()
-                    }
-                    Button {
-                        showLogoutConfirmation = false
-                        appState.user = nil
-                    } label: {
-                        Text(L10n.accept.uppercased())
-                            .modifier(TextModifier(size: 18, weight: .bold, color: Asset.Colors.error.swiftUIColor))
-                            .padding()
-                    }
-                }
-                .background(.black.opacity(0.2))
-            }
-            .background(Asset.Colors.lightBackground.swiftUIColor)
-            .clipShape(RoundedRectangle(cornerRadius: 15))
-            .overlay {
-                RoundedRectangle(cornerRadius: 15)
-                    .stroke(Asset.Colors.secondaryColor.swiftUIColor, lineWidth: 1)
-            }
-            .padding()
+        AppAlertView(showAlert: $showLogoutConfirmation,
+                     image: Image(systemName: "exclamationmark.triangle"),
+                     imageColor: Asset.Colors.error.swiftUIColor,
+                     title: L10n.userLogoutConfirmationTitle,
+                     description: L10n.userLogoutConfirmationMessage) {
+            appState.user = nil
         }
+    }
+    
+    @ViewBuilder
+    var reloadAppPopup: some View {
+        AppAlertView(showAlert: $showReloadAppPopup,
+                     image: Image(systemName: "exclamationmark.triangle"),
+                     imageColor: Asset.Colors.error.swiftUIColor,
+                     title: L10n.userSaveChangesConfirmationTitle,
+                     description: L10n.userSaveChangesConfirmationMessage) {
+            Task {
+                await saveUserData()
+            }
+        }
+    }
+    
+    @ViewBuilder
+    var pickers: some View {
+        EmptyView()
+            .fullScreenCover(isPresented: $showDatePicker) {
+                datePicker
+            }
+            .fullScreenCover(isPresented: $showLangPicker) {
+                langPicker
+            }
     }
     
     @ViewBuilder
@@ -248,6 +227,40 @@ struct UserView: View {
     }
     
     @ViewBuilder
+    var langPicker: some View {
+        VStack {
+            Color.clear
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    showLangPicker = false
+                }
+            VStack(spacing: 0) {
+                HStack {
+                    Spacer()
+                    Button {
+                        showLangPicker = false
+                    } label: {
+                        Text(L10n.accept.uppercased())
+                            .modifier(TextModifier(size: 14, weight: .bold, color: Asset.Colors.primaryColor.swiftUIColor))
+                            .padding()
+                    }
+                }
+                separator
+                Picker("", selection: $langAux) {
+                    ForEach(Constants.AppLangs.allCases, id: \.rawValue) { langCode in
+                        Text(langCode.rawValue.uppercased())
+                            .modifier(TextModifier(size: 16, weight: .bold,
+                                                   color: langCode.rawValue == langAux ? Asset.Colors.accentColor.swiftUIColor : Asset.Colors.primaryColor.swiftUIColor))
+                    }
+                }
+                .pickerStyle(.wheel)
+            }
+            .background(Constants.backgroundColorGradient)
+        }
+        .presentationBackground(Color.clear)
+    }
+    
+    @ViewBuilder
     var separator: some View {
         Rectangle()
             .fill(Asset.Colors.secondaryColor.swiftUIColor)
@@ -261,6 +274,12 @@ extension UserView {
         if let user = appState.user {
             self.userAux = user
         }
+        self.langAux = appState.lang
+    }
+    
+    private func openLangPicker() {
+        focus = nil
+        showLangPicker = true
     }
     
     private func openDatePicker() {
@@ -268,15 +287,29 @@ extension UserView {
         showDatePicker = true
     }
     
+    private func shouldSaveUserData() {
+        if langAux != appState.lang {
+            showReloadAppPopup = true
+        } else {
+            Task {
+                await saveUserData()
+            }
+        }
+    }
+    
     private func saveUserData() async {
         do {
-            try await Task.sleep(nanoseconds: 2_000_000_000)
             if userAux != appState.user {
+                try await Task.sleep(nanoseconds: 2_000_000_000)
                 if userAux.fullName.isEmpty || userAux.address.isEmpty || userAux.email.isEmpty || userAux.phone.isEmpty {
                     toast = .init(L10n.loginEmptyFieldsError)
                 } else {
                     appState.user = userAux
                 }
+            }
+            if langAux != appState.lang {
+                appState.lang = langAux
+                exit(0)
             }
         } catch {
             toast = .init(L10n.errorBadRequestMessage)
