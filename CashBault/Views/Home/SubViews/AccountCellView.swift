@@ -18,8 +18,14 @@ struct AccountCellView: View {
                 VStack(alignment: .leading, spacing: 5) {
                     Text(account.name)
                         .modifier(TextModifier(size: 22, weight: .bold, color: Asset.Colors.primaryColor.swiftUIColor))
-                    Text(account.type.title)
-                        .modifier(TextModifier(size: 18, weight: .regular, color: Asset.Colors.secondaryColor.swiftUIColor))
+                    switch account.type {
+                    case .normal:
+                        Text(L10n.accountTypeNormalTitle)
+                            .modifier(TextModifier(size: 18, weight: .regular, color: Asset.Colors.secondaryColor.swiftUIColor))
+                    case .saving:
+                        Text(L10n.accountTypeSavingTitle)
+                            .modifier(TextModifier(size: 18, weight: .regular, color: Asset.Colors.secondaryColor.swiftUIColor))
+                    }
                 }
                 HStack(spacing: 0) {
                     Text(Util.getTwoDigitStr(num: account.balance))

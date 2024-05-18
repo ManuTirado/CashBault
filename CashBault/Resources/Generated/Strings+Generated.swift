@@ -95,10 +95,14 @@ internal enum L10n {
 // MARK: - Implementation Details
 
 extension L10n {
-  private static func tr(_ table: String, _ key: String, _ args: CVarArg..., fallback value: String) -> String {
-    let format = BundleToken.bundle.localizedString(forKey: key, value: value, table: table)
-    return String(format: format, locale: Locale.current, arguments: args)
-  }
+    private static func tr(_ table: String, _ key: String, _ args: CVarArg...) -> String {
+        if let pathBundle = BundleToken.bundle.path(forResource: UserDefaults.standard.string(forKey: Constants.defaultsLangKey) ?? "en", ofType: "lproj"), let bundle = Bundle(path: pathBundle) {
+            let format = bundle.localizedString(forKey: key, value: nil, table: table)
+            return String(format: format, arguments: args)
+        }
+        let format = BundleToken.bundle.localizedString(forKey: key, value: nil, table: table)
+        return String(format: format, locale: Locale(identifier: Locale.current.identifier), arguments: args)
+    }
 }
 
 // swiftlint:disable convenience_type
