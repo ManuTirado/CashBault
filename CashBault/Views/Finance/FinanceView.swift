@@ -11,6 +11,7 @@ struct FinanceView: View {
     
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var accountsModel: AccountsModel
+    @State private var toast: Toast? = nil
     @State private var navigateToAddAccount: Bool = false
     var isLoading: Bool {
         accountsModel.loadingAccounts
@@ -33,6 +34,7 @@ struct FinanceView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Constants.backgroundColorGradient)
             .background(navigation)
+            .toastView(toast: $toast)
             .customNavigationBar(
                 customCenterContent: {
                     Text(L10n.tabFinanceTitle)
@@ -112,7 +114,7 @@ struct FinanceView: View {
     var navigation: some View {
         EmptyView()
             .navigationDestination(isPresented: $navigateToAddAccount) {
-                FinanceAddAccountView()
+                FinanceAddAccountView(financeViewToast: $toast)
             }
     }
 }

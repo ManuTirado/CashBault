@@ -223,7 +223,7 @@ struct UserView: View {
             }
             .background(Constants.backgroundColorGradient)
         }
-        .presentationBackground(Color.clear)
+        .presentationBackground(.clear)
     }
     
     @ViewBuilder
@@ -257,7 +257,7 @@ struct UserView: View {
             }
             .background(Constants.backgroundColorGradient)
         }
-        .presentationBackground(Color.clear)
+        .presentationBackground(.clear)
     }
     
     @ViewBuilder

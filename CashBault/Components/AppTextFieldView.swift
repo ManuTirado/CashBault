@@ -87,7 +87,7 @@ struct AppTextFieldView: View {
                 }
                 ZStack(alignment: .leading) {
                     Text(placeHolder)
-                        .opacity(value.isEmpty ? 1 : 0)
+                        .opacity(value.isEmpty ? 0.7 : 0)
                     Group {
                         if isTextVisible {
                             TextField("", text: $value)

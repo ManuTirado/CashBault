@@ -25,6 +25,7 @@
 		FA36F34B2BED479800C33B26 /* AppTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36F34A2BED479800C33B26 /* AppTextFieldView.swift */; };
 		FA36F34D2BED4B5E00C33B26 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36F34C2BED4B5E00C33B26 /* ToastView.swift */; };
 		FA36F34F2BED5EE200C33B26 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36F34E2BED5EE200C33B26 /* ErrorModel.swift */; };
+		FA38F82C2BF8F3D50044E096 /* AccountCurrencyDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA38F82B2BF8F3D50044E096 /* AccountCurrencyDTO.swift */; };
 		FA3C18282BE162F50080F474 /* AccountsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3C18272BE162F50080F474 /* AccountsModel.swift */; };
 		FA3C182B2BE168800080F474 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3C182A2BE1687F0080F474 /* LoginView.swift */; };
 		FA3C182D2BE178850080F474 /* TextModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3C182C2BE178850080F474 /* TextModifiers.swift */; };
@@ -74,6 +75,7 @@
 		FA36F34A2BED479800C33B26 /* AppTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextFieldView.swift; sourceTree = "<group>"; };
 		FA36F34C2BED4B5E00C33B26 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		FA36F34E2BED5EE200C33B26 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
+		FA38F82B2BF8F3D50044E096 /* AccountCurrencyDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCurrencyDTO.swift; sourceTree = "<group>"; };
 		FA3C18272BE162F50080F474 /* AccountsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsModel.swift; sourceTree = "<group>"; };
 		FA3C182A2BE1687F0080F474 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		FA3C182C2BE178850080F474 /* TextModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifiers.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 			children = (
 				FA1EDFB22BF67E5700AAE967 /* AccountDTO.swift */,
 				FA1EDFB62BF67F5A00AAE967 /* AccountMovementDTO.swift */,
+				FA38F82B2BF8F3D50044E096 /* AccountCurrencyDTO.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				FAA1B1892BEEA16000A2175C /* AppButtonView.swift in Sources */,
 				FA91A50D2BE946E900CD5D33 /* AccountCellView.swift in Sources */,
 				FAB248BD2BDFF7FE00D21514 /* HomeView.swift in Sources */,
+				FA38F82C2BF8F3D50044E096 /* AccountCurrencyDTO.swift in Sources */,
 				FAB248B52BDFF69000D21514 /* AppTabView.swift in Sources */,
 				FA3C182D2BE178850080F474 /* TextModifiers.swift in Sources */,
 				FA70F3B52BF539AF0087CDF0 /* AppAlertView.swift in Sources */,

@@ -24,6 +24,8 @@ internal enum L10n {
   internal static let accountTypeNormalTitle = L10n.tr("Localizable", "account_type_normal_title")
   /// Saving account
   internal static let accountTypeSavingTitle = L10n.tr("Localizable", "account_type_saving_title")
+  /// Account type
+  internal static let accountTypeTitle = L10n.tr("Localizable", "account_type_title")
   /// Address
   internal static let addressPlaceholder = L10n.tr("Localizable", "address_placeholder")
   /// CashBault
@@ -34,6 +36,8 @@ internal enum L10n {
   internal static let cancel = L10n.tr("Localizable", "cancel")
   /// Cancelled
   internal static let cancelled = L10n.tr("Localizable", "cancelled")
+  /// Currency
+  internal static let currency = L10n.tr("Localizable", "currency")
   /// Email
   internal static let emailPlaceholder = L10n.tr("Localizable", "email_placeholder")
   /// An error has occurred. Please try again in a while
@@ -50,6 +54,8 @@ internal enum L10n {
   internal static let errorTimeOutMessage = L10n.tr("Localizable", "error_time_out_message")
   /// Add account
   internal static let financeAddAccountLabel = L10n.tr("Localizable", "finance_add_account_label")
+  /// Application sent correctly, we will notify you when it is approved
+  internal static let financeAddAccountOkResponse = L10n.tr("Localizable", "finance_add_account_ok_response")
   /// Add new account
   internal static let financeAddAccountTitle = L10n.tr("Localizable", "finance_add_account_title")
   /// You don't have an account yet
@@ -82,6 +88,8 @@ internal enum L10n {
   internal static let loginNotFoundError = L10n.tr("Localizable", "login_not_found_error")
   /// Fields must be valid to continue
   internal static let loginValidFieldsError = L10n.tr("Localizable", "login_valid_fields_error")
+  /// Name
+  internal static let name = L10n.tr("Localizable", "name")
   /// You have no movements
   internal static let noMovements = L10n.tr("Localizable", "no_movements")
   /// Password

@@ -33,6 +33,7 @@
 "home_action_scheduled" = "Programado";
 "home_action_insights" = "Perspectivas";
 
+"account_type_title" = "Account type";
 "account_type_normal_title" = "Cuenta normal";
 "account_type_saving_title" = "Cuenta de ahorro";
 
@@ -46,6 +47,7 @@
 "finance_normal_accounts_title" = "Cuentas normales";
 "finance_saving_accounts_title" = "Cuentas de ahorro";
 "finance_add_account_title" = "Añadir nueva cuenta";
+"finance_add_account_ok_response" = "Solicitud enviada correctamente, te avisaremos cuando se apruebe";
 
 "user_personal_info_label" = "Información personal";
 "user_config_label" = "Configuración";
@@ -62,3 +64,5 @@
 "cancel" = "Cancelar";
 "accept" = "Aceptar";
 "save" = "Guardar";
+"name" = "Nombre";
+"currency" = "Moneda";

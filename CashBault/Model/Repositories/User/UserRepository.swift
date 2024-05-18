@@ -13,7 +13,7 @@ struct UserRepository {
         try await Task.sleep(nanoseconds: 2_500_000_000)
         if user == "test@test.com" && password == "A1234567" {
             try await Task.sleep(nanoseconds: 2_500_000_000)
-            return User.Mock
+            return .Mock
         } else {
             throw AppError.custom(L10n.loginNotFoundError)
         }

@@ -10,7 +10,16 @@ import Foundation
 struct AccountRepository {
         
     static func getUserAccounts(userId: Int) async throws -> [Account] {
-        try await Task.sleep(nanoseconds: 5_000_000_000)
-        return [Account.Mock1, Account.Mock2, Account.Mock3]
+        try await Task.sleep(nanoseconds: 3_500_000)
+        return [.Mock1, .Mock2, .Mock3]
+    }
+    
+    static func getCurrencies() async throws -> [AccountCurrencyDTO] {
+        try await Task.sleep(nanoseconds: 1_000_000_000)
+        return [.Mock1, .Mock2, .Mock3, .Mock4]
+    }
+    
+    static func createAccount() async throws {
+        try await Task.sleep(nanoseconds: 1_000_000_000)
     }
 }

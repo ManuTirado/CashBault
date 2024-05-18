@@ -12,4 +12,12 @@ struct AccountInterface {
     static func getUserAccounts(userId: Int) async throws -> [Account] {
         try await AccountRepository.getUserAccounts(userId: userId)
     }
+    
+    static func getCurrencies() async throws -> [AccountCurrencyDTO] {
+        try await AccountRepository.getCurrencies()
+    }
+    
+    static func createAccount() async throws {
+        try await AccountRepository.createAccount()
+    }
 }

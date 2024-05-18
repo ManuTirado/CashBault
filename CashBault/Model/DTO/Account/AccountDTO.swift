@@ -18,7 +18,7 @@ struct Account {
     var balance: Double
     var movements: [AccountMovement]
     
-    enum AccountType {
+    enum AccountType: CaseIterable {
         case normal
         case saving
     }

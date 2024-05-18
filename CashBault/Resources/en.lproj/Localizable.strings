@@ -33,6 +33,7 @@
 "home_action_scheduled" = "Scheduled";
 "home_action_insights" = "Insights";
 
+"account_type_title" = "Account type";
 "account_type_normal_title" = "Normal account";
 "account_type_saving_title" = "Saving account";
 
@@ -46,6 +47,7 @@
 "finance_normal_accounts_title" = "Normal accounts";
 "finance_saving_accounts_title" = "Saving accounts";
 "finance_add_account_title" = "Add new account";
+"finance_add_account_ok_response" = "Application sent correctly, we will notify you when it is approved";
 
 "user_personal_info_label" = "Personal info";
 "user_config_label" = "Configuration";
@@ -62,3 +64,5 @@
 "cancel" = "Cancel";
 "accept" = "Accept";
 "save" = "Save";
+"name" = "Name";
+"currency" = "Currency";
