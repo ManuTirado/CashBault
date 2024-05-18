@@ -1,12 +1,68 @@
-/* 
-  Localizable.strings
-  CashBault
+"app_name" = "CashBault";
 
-  Created by manueltirado on 29/4/24.
-  
-*/
+"error_time_out_message" = "Looks like the server is taking to long to respond. Please try again in a while";
+"error_server_error_message" = "Could not establish connection to the server. Please try again in a while";
+"error_bad_request_message" = "An error has occurred. Please try again in a while";
+
+"email_placeholder" = "Email";
+"password_placeholder" = "Password";
+"full_name_placeholder" = "Full name";
+"address_placeholder" = "Address";
+"birth_date_placeholder" = "Birth Date";
+"phone_placeholder" = "Phone";
+
+"login" = "Login";
+"login_error" = "An error occurred while trying to log in";
+"login_not_found_error" = "The email or password entered does not exist or does not match";
+"login_empty_fields_error" = "Fields cannot be empty";
+"login_valid_fields_error" = "Fields must be valid to continue";
+"use_biometric_label" = "Use biometric recognition";
+
+"error_empty" = "The field cannot be empty";
+"error_email" = "Incorrect email format";
+"error_password" = "The password must contain at least 8 characters and a number";
+
 
 "tab_home_title" = "Home";
 "tab_finance_title" = "Finances";
-"tab_explore_title" = "Explore";
 "tab_cards_title" = "Cards";
+"tab_user_title" = "User";
+
+"home_action_add_money" = "Add money";
+"home_action_send_money" = "Send money";
+"home_action_scheduled" = "Scheduled";
+"home_action_insights" = "Insights";
+
+"account_type_title" = "Account type";
+"account_type_normal_title" = "Normal account";
+"account_type_saving_title" = "Saving account";
+
+"account_movement_sender_to" = "To %@";
+"account_movement_sender_from" = "From %@";
+
+"finance_total_balance_label" = "Total balance";
+"finance_total_balance_no_balance_label" = "No balance available";
+"finance_no_account_label" = "You don't have an account yet";
+"finance_add_account_label" = "Add account";
+"finance_normal_accounts_title" = "Normal accounts";
+"finance_saving_accounts_title" = "Saving accounts";
+"finance_add_account_title" = "Add new account";
+"finance_add_account_ok_response" = "Application sent correctly, we will notify you when it is approved";
+
+"user_personal_info_label" = "Personal info";
+"user_config_label" = "Configuration";
+"user_config_language" = "Language";
+"user_logout_label" = "Log out";
+"user_logout_confirmation_title" = "Log out";
+"user_logout_confirmation_message" = "Are you sure you want to log out?";
+"user_save_changes_confirmation_title" = "Reload";
+"user_save_changes_confirmation_message" = "It is necessary to reload the app to apply the changes";
+
+"pending" = "Pending";
+"cancelled" = "Cancelled";
+"no_movements" = "You have no movements";
+"cancel" = "Cancel";
+"accept" = "Accept";
+"save" = "Save";
+"name" = "Name";
+"currency" = "Currency";
