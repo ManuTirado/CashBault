@@ -170,8 +170,8 @@
 		FA1EDFA72BF67C2700AAE967 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				FA1EDFA32BF67B7400AAE967 /* UserRepository.swift */,
 				FA1EDFA92BF67C5000AAE967 /* UserInterface.swift */,
+				FA1EDFA32BF67B7400AAE967 /* UserRepository.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -179,8 +179,8 @@
 		FA1EDFA82BF67C2C00AAE967 /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				FA1EDFA52BF67B8E00AAE967 /* AccountRepository.swift */,
 				FA1EDFAE2BF67DF000AAE967 /* AccountInterface.swift */,
+				FA1EDFA52BF67B8E00AAE967 /* AccountRepository.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
