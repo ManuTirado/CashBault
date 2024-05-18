@@ -101,7 +101,7 @@ extension LoginView {
             } else if !isEmailValid || !isPasswordValid {
                 toast = .init(L10n.loginValidFieldsError)
             } else {
-                try await appState.doLogin(email: emailField, password: passwordField)
+                appState.user = try await UserInterface.doLogin(user: emailField, password: passwordField)
             }
         } catch let error as AppError {
             toast = .init(error.errorMsg)
@@ -116,7 +116,7 @@ extension LoginView {
         focusedField = nil
         isLoading = true
         do {
-            try await appState.doBiometricLogin()
+            appState.user = try await UserInterface.doBiometricLogin(user: "", password: "")
         } catch let error as AppError {
             toast = .init(error.errorMsg)
         } catch {

@@ -9,13 +9,13 @@ import SwiftUI
 
 struct AppTabView: View {
     
+    @EnvironmentObject var appState: AppState
     @StateObject var accountsModel = AccountsModel()
     @State private var selectedTab: Int = Tabs.homepage.id
     
     enum Tabs: Identifiable, CaseIterable {
         case homepage
         case finance
-        case cards
         case user
         
         var id: Int {
@@ -24,10 +24,8 @@ struct AppTabView: View {
                 return 0
             case .finance:
                 return 1
-            case .cards:
-                return 2
             case .user:
-                return 3
+                return 2
             }
         }
         var title: String {
@@ -36,8 +34,6 @@ struct AppTabView: View {
                 return L10n.tabHomeTitle
             case .finance:
                 return L10n.tabFinanceTitle
-            case .cards:
-                return L10n.tabCardsTitle
             case .user:
                 return L10n.tabUserTitle
             }
@@ -48,8 +44,6 @@ struct AppTabView: View {
                 return Image(systemName: "house")
             case .finance:
                 return Image(systemName: "chart.bar")
-            case .cards:
-                return Image(systemName: "creditcard")
             case .user:
                 return Image(systemName: "person.crop.circle")
             }
@@ -65,8 +59,6 @@ struct AppTabView: View {
                 FinanceView()
                     .tag(Tabs.finance.id)
                     .environmentObject(accountsModel)
-                CardsView()
-                    .tag(Tabs.cards.id)
                 UserView()
                     .tag(Tabs.user.id)
             }
@@ -133,10 +125,10 @@ extension AppTabView {
     
     private func getUserAccounts() async {
         do {
+            guard let user = appState.user else { return }
             accountsModel.errorGettingAccounts = false
             accountsModel.loadingAccounts = true
-            try await Task.sleep(nanoseconds: 5_000_000_000)
-            accountsModel.accounts = [Account.Mock1, Account.Mock2, Account.Mock3]
+            accountsModel.accounts = try await AccountInterface.getUserAccounts(userId: user.id)
             accountsModel.selectedAccount = accountsModel.accounts?.first
         } catch {
             accountsModel.errorGettingAccounts = true
