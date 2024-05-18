@@ -6,6 +6,10 @@
 
 "email_placeholder" = "Email";
 "password_placeholder" = "Password";
+"full_name_placeholder" = "Full name";
+"address_placeholder" = "Address";
+"birth_date_placeholder" = "Birth Date";
+"phone_placeholder" = "Phone";
 
 "login" = "Login";
 "login_error" = "An error occurred while trying to log in";
@@ -21,8 +25,8 @@
 
 "tab_home_title" = "Home";
 "tab_finance_title" = "Finances";
-"tab_explore_title" = "Explore";
 "tab_cards_title" = "Cards";
+"tab_user_title" = "User";
 
 "home_action_add_money" = "Add money";
 "home_action_send_money" = "Send money";
@@ -43,6 +47,18 @@
 "finance_saving_accounts_title" = "Saving accounts";
 "finance_add_account_title" = "Add new account";
 
+"user_personal_info_label" = "Personal info";
+"user_config_label" = "Configuration";
+"user_config_language" = "Language";
+"user_logout_label" = "Log out";
+"user_logout_confirmation_title" = "Log out";
+"user_logout_confirmation_message" = "Are you sure you want to log out?";
+"user_save_changes_confirmation_title" = "Reload";
+"user_save_changes_confirmation_message" = "It is necessary to reload the app to apply the changes";
+
 "pending" = "Pending";
 "cancelled" = "Cancelled";
 "no_movements" = "You have no movements";
+"cancel" = "Cancel";
+"accept" = "Accept";
+"save" = "Save";

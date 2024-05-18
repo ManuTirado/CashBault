@@ -8,7 +8,7 @@ strings:
     - en.lproj
      ## - Resources/es.lproj
   outputs:
-    - templateName: structured-swift5
+    - templatePath: CashBault/Resources/custom-template.stencil
       output: Strings+Generated.swift
 
 ## Generate constants for your Assets Catalogs, including constants for images, colors, ARKit resources, etc.

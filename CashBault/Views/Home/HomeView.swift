@@ -106,7 +106,6 @@ struct HomeView: View {
                     .background(Color.red)
             } else {
                 GeometryReader { reader in
-                    ScrollViewReader { value in
                         ScrollView(.horizontal) {
                             LazyHStack(spacing: 10) {
                                 ForEach(accountsModel.accounts ?? [Account.Empty], id: \.self) { account in
@@ -117,10 +116,10 @@ struct HomeView: View {
                             .padding(.horizontal)
                             .scrollTargetLayout()
                         }
-                        .scrollTargetBehavior(.paging)
+                        .scrollTargetBehavior(.viewAligned)
                         .scrollPosition(id: $accountsModel.selectedAccount)
                         .scrollIndicators(.never)
-                    }
+                        .scrollDisabled(isLoading ? true : false)
                 }
                 .frame(height: 150)
             }
@@ -151,6 +150,8 @@ struct HomeView: View {
             if accountsModel.selectedAccount?.movements.isEmpty ?? false && !isLoading {
                 Text(L10n.noMovements)
                     .modifier(TextModifier(size: 18, weight: .bold, color: Asset.Colors.primaryColor.swiftUIColor))
+                    .padding(.top, 8)
+                Spacer(minLength: 0)
             } else {
                 ScrollView {
                     LazyVStack(alignment: .leading, spacing: 0) {

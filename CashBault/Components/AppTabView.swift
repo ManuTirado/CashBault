@@ -15,8 +15,8 @@ struct AppTabView: View {
     enum Tabs: Identifiable, CaseIterable {
         case homepage
         case finance
-        case explore
         case cards
+        case user
         
         var id: Int {
             switch self {
@@ -24,9 +24,9 @@ struct AppTabView: View {
                 return 0
             case .finance:
                 return 1
-            case .explore:
-                return 2
             case .cards:
+                return 2
+            case .user:
                 return 3
             }
         }
@@ -36,10 +36,10 @@ struct AppTabView: View {
                 return L10n.tabHomeTitle
             case .finance:
                 return L10n.tabFinanceTitle
-            case .explore:
-                return L10n.tabExploreTitle
             case .cards:
                 return L10n.tabCardsTitle
+            case .user:
+                return L10n.tabUserTitle
             }
         }
         var icon: Image {
@@ -48,10 +48,10 @@ struct AppTabView: View {
                 return Image(systemName: "house")
             case .finance:
                 return Image(systemName: "chart.bar")
-            case .explore:
-                return Image(systemName: "sparkles.rectangle.stack")
             case .cards:
                 return Image(systemName: "creditcard")
+            case .user:
+                return Image(systemName: "person.crop.circle")
             }
         }
     }
@@ -65,10 +65,10 @@ struct AppTabView: View {
                 FinanceView()
                     .tag(Tabs.finance.id)
                     .environmentObject(accountsModel)
-                ExploreView()
-                    .tag(Tabs.explore.id)
                 CardsView()
                     .tag(Tabs.cards.id)
+                UserView()
+                    .tag(Tabs.user.id)
             }
             ZStack {
                 HStack(spacing: 0) {

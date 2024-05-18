@@ -1,4 +1,64 @@
+"app_name" = "CashBault";
+
+"error_time_out_message" = "Parece que el servidor está tardando demasiado en responder. Por favor, inténtalo de nuevo dentro de un rato";
+"error_server_error_message" = "No se pudo establecer conexión con el servidor. Por favor, inténtalo de nuevo dentro de un rato";
+"error_bad_request_message" = "Se ha producido un error. Por favor, inténtalo de nuevo dentro de un rato";
+
+"email_placeholder" = "Email";
+"password_placeholder" = "Contraseña";
+"full_name_placeholder" = "Nombre completo";
+"address_placeholder" = "Dirección";
+"birth_date_placeholder" = "Fecha de nacimiento";
+"phone_placeholder" = "Teléfono";
+
+"login" = "Iniciar sesión";
+"login_error" = "Ocurrió un error al intentar iniciar sesión";
+"login_not_found_error" = "El correo electrónico o contraseña ingresados ​​no existe o no coincide";
+"login_empty_fields_error" = "Los campos no pueden estar vacíos";
+"login_valid_fields_error" = "Los campos deben ser válidos para continuar";
+"use_biometric_label" = "Utilice el reconocimiento biométrico";
+
+"error_empty" = "El campo no puede estar vacío";
+"error_email" = "Formato de correo electrónico incorrecto";
+"error_password" = "La contraseña debe contener al menos 8 caracteres y un número";
+
+
 "tab_home_title" = "Inicio";
 "tab_finance_title" = "Finanzas";
-"tab_explore_title" = "Explorar";
 "tab_cards_title" = "Tarjetas";
+"tab_user_title" = "Perfil";
+
+"home_action_add_money" = "Añadir dinero";
+"home_action_send_money" = "Enviar dinero";
+"home_action_scheduled" = "Programado";
+"home_action_insights" = "Perspectivas";
+
+"account_type_normal_title" = "Cuenta normal";
+"account_type_saving_title" = "Cuenta de ahorro";
+
+"account_movement_sender_to" = "A %@";
+"account_movement_sender_from" = "De %@";
+
+"finance_total_balance_label" = "Saldo total";
+"finance_total_balance_no_balance_label" = "No hay saldo disponible";
+"finance_no_account_label" = "Aún no tienes una cuenta";
+"finance_add_account_label" = "Añadir cuenta";
+"finance_normal_accounts_title" = "Cuentas normales";
+"finance_saving_accounts_title" = "Cuentas de ahorro";
+"finance_add_account_title" = "Añadir nueva cuenta";
+
+"user_personal_info_label" = "Información personal";
+"user_config_label" = "Configuración";
+"user_config_language" = "Idioma";
+"user_logout_label" = "Cerrar sesión";
+"user_logout_confirmation_title" = "Cerrar sesión";
+"user_logout_confirmation_message" = "¿Estás seguro de que quieres cerrar sesión?";
+"user_save_changes_confirmation_title" = "Recargar";
+"user_save_changes_confirmation_message" = "Es necesario recargar la app para aplicar los cambios";
+
+"pending" = "Pendiente";
+"cancelled" = "Cancelado";
+"no_movements" = "No tienes movimientos";
+"cancel" = "Cancelar";
+"accept" = "Aceptar";
+"save" = "Guardar";
